@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BigShotScript.js" />
-     <Compile Include="Assets\Scripts\Cam2.js" />
      <Compile Include="Assets\Scripts\Scores.js" />
      <Compile Include="Assets\Scripts\SupplyScript.js" />
      <Compile Include="Assets\Scripts\_GM.js" />
@@ -60,7 +59,6 @@
      <Compile Include="Assets\Scripts\enemy01.js" />
      <Compile Include="Assets\Scripts\fieldScript.js" />
      <Compile Include="Assets\Scripts\fireScript.js" />
-     <Compile Include="Assets\Scripts\plane.js" />
      <Compile Include="Assets\Scripts\player01.js" />
      <Compile Include="Assets\Scripts\shot.js" />
      <Compile Include="Assets\Scripts\tower01script.js" />

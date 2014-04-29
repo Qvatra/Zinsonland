@@ -12,13 +12,15 @@ private var pix3:Color32[];
 var angle: int;
 
 function Start () {
+
+};
+
+function drawBlood(){
 		var background : Texture2D = Instantiate(renderer.material.mainTexture);
         pix1 = background.GetPixels32();
         pix2 = bloodToDraw.GetPixels32();
 		var W = bloodToDraw.width;
 		var H = bloodToDraw.height;
-		
-
 		
 		pix3 = rotateSquare(pix2, Mathf.Deg2Rad*angle);
 		
@@ -31,7 +33,7 @@ function Start () {
         background.SetPixels32(pix1);
         background.Apply();
         renderer.material.mainTexture = background;
-};
+}
 
 function rotateSquare(arr:Color32[], phi:float){
 	var x:int;

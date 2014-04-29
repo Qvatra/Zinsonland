@@ -88,6 +88,8 @@ function death(){
 	var endpoint = fieldCanvasScript.point(p01.transform.position, transform.position, 0.2f);
 	fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
 	
+	fieldCanvasScript.drawBlood();
+	
 	_stat.enemiesKilled++;
 	_stat.cash++;
 	Destroy(gameObject);
