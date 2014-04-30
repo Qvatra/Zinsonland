@@ -5,7 +5,7 @@ var shot : GameObject;
 var aim01 : Transform;
 static var aimPos : Vector3;
 var health : int;
-
+private var nextFire : float = 0.0;
 private var action : int = 0;
 private var localScaleX : float;
 
@@ -16,11 +16,8 @@ function Start () {
 
 function Update () {
 	if (_stat.livesLeft > 0){
-		if(Input.GetButtonDown("Fire1")){
-			Instantiate (shot, transform.position, transform.rotation);
-			aimPos = aim01.position;
-			anim.SetInteger("action", 2);
-		}
+		
+		Firing();
 
 		transform.position.x += Input.GetAxis("Horizontal")* _GM.p01vel * Time.deltaTime;
 		transform.position.y += Input.GetAxis("Vertical")* _GM.p01vel * Time.deltaTime;
@@ -34,5 +31,27 @@ function Update () {
 		}
 	} else {
 		anim.SetInteger("action", 3);
+	}
+}
+function Firing() {
+	if(_GM.weapon == 'Pistol' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
+			nextFire = Time.time + 1;
+			Instantiate (shot, transform.position, transform.rotation);
+			aimPos = aim01.position;
+			anim.SetInteger("action", 2);
+	} else if(_GM.weapon == 'Assault_rifle' && Input.GetButton("Fire1") && Time.time > nextFire){
+		nextFire = Time.time + 0.2;
+		Instantiate (shot, transform.position, transform.rotation);
+		aimPos = aim01.position;
+		anim.SetInteger("action", 2);
+	} else if(_GM.weapon == 'Shotgun' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
+		nextFire = Time.time + 1.5;
+		Instantiate (shot, transform.position, transform.rotation);
+		Instantiate (shot, transform.position, transform.rotation);
+		Instantiate (shot, transform.position, transform.rotation);
+		Instantiate (shot, transform.position, transform.rotation);
+		Instantiate (shot, transform.position, transform.rotation);
+		aimPos = aim01.position;
+		anim.SetInteger("action", 2);
 	}
 }

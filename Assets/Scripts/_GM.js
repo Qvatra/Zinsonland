@@ -5,7 +5,7 @@ static var fieldW : float = 10f;
 static var fieldH : float = 10f;
 static var aimDist : float = 0.3f;
 static var shotDist : int = 2.5f;
-static var weapon : String = 'Pistol'; //test
+static var weapon : String = 'Assault_rifle'; //test
 
 private var time : String;
 private var enemies : String;
@@ -25,6 +25,7 @@ function Start () {
 	_stat.reset();
 	statusBar = GameObject.Find("_StatText");
 	
+
 //	for(i = 0; i < boxNum; i++){
 //		Instantiate(prefabBonus11, Vector3(Random.Range(-fieldW/2,fieldW/2), Random.Range(-fieldH/2,fieldH/2),0), Quaternion(0,0,Random.Range(0,360), Random.Range(0,360)));
 //	}
