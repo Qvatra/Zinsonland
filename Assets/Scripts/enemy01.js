@@ -7,6 +7,7 @@ var scanTimeLowBound : float;
 var scanTimeFluctuation: float;
 var sightDist : float;
 
+//private var cam: Camera;
 private var fieldCanvasScript : fieldScript;
 private var time: float;
 private var closestEnemy : GameObject;
@@ -18,6 +19,7 @@ function Start () {
 	speed = speed/1000;
 	p01 = GameObject.Find("player01");
 	fieldCanvasScript = GameObject.Find("FieldCanvas").GetComponent("fieldScript");
+//	cam = GameObject.Find("_MainCam").GetComponent(Camera);
 	time = 0f;
 }
 
@@ -87,8 +89,8 @@ function OnCollisionEnter2D (hitInfo : Collision2D) {
 function death(){
 	var endpoint = fieldCanvasScript.point(p01.transform.position, transform.position, 0.2f);
 	fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
-	
-	fieldCanvasScript.drawBlood();
+
+	fieldCanvasScript.drawBlood(-transform.position.x*100,-transform.position.y*100,0);
 	
 	_stat.enemiesKilled++;
 	_stat.cash++;

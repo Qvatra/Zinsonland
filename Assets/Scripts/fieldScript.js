@@ -4,18 +4,14 @@ var texSizeX: int;
 var texSizeY: int;
 
 var bloodToDraw : Texture2D;
-var x: int;
-var y: int;
+//var x: int;
+//var y: int;
+//var angle: int;
 private var pix1:Color32[];
 private var pix2:Color32[];
 private var pix3:Color32[];
-var angle: int;
 
-function Start () {
-
-};
-
-function drawBlood(){
+function drawBlood(x:int, y:int, angle: int){
 		var background : Texture2D = Instantiate(renderer.material.mainTexture);
         pix1 = background.GetPixels32();
         pix2 = bloodToDraw.GetPixels32();

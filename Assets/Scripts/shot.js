@@ -4,8 +4,11 @@ private var p01 : GameObject;
 private var vx : float;
 private var vy : float;
 var force : float;
+//private var camScript: _MainCam;
 
 function Start () {
+	//camScript = GameObject.Find("_MainCam").GetComponent('_MainCam');
+
 	_stat.shotsFired++;
 	Physics2D.IgnoreLayerCollision(8, 9, true);
 	var vektor : Vector2;

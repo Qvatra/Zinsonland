@@ -1,13 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\player01.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Supply(Rifle).js">
     <Files>
-      <File FileName="Assets\Scripts\_GM.js" Line="8" Column="46" />
-      <File FileName="Assets\Scripts\fieldScript.js" Line="18" Column="10" />
+      <File FileName="Assets\Scripts\_GM.js" Line="8" Column="55" />
+      <File FileName="Assets\Scripts\fieldScript.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\shot.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\player01.js" Line="16" Column="1" />
-      <File FileName="Assets\Scripts\_MainCam.js" Line="67" Column="4" />
-      <File FileName="Assets\Scripts\enemy01.js" Line="91" Column="32" />
+      <File FileName="Assets\Scripts\player01.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\_MainCam.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\enemy01.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Supply(Shotgun).js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Supply(Rifle).js" Line="13" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
