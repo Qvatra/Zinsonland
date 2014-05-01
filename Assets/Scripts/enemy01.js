@@ -90,7 +90,7 @@ function death(){
 	var endpoint = fieldCanvasScript.point(p01.transform.position, transform.position, 0.2f);
 	fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
 
-	fieldCanvasScript.drawBlood(-transform.position.x*100,-transform.position.y*100,0);
+	fieldCanvasScript.drawBlood(-transform.position.x*100,-transform.position.y*100,0, Color32(200,0,0,180));
 	
 	_stat.enemiesKilled++;
 	_stat.cash++;

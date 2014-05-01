@@ -4,15 +4,16 @@ var texSizeX: int;
 var texSizeY: int;
 
 var bloodToDraw : Texture2D;
-//var x: int;
-//var y: int;
-//var angle: int;
 private var pix1:Color32[];
 private var pix2:Color32[];
 private var pix3:Color32[];
+private var background : Texture2D;
 
-function drawBlood(x:int, y:int, angle: int){
-		var background : Texture2D = Instantiate(renderer.material.mainTexture);
+function Start(){
+	background = Instantiate(renderer.material.mainTexture);
+}
+
+function drawBlood(x:int, y:int, angle: int, color: Color32){
         pix1 = background.GetPixels32();
         pix2 = bloodToDraw.GetPixels32();
 		var W = bloodToDraw.width;
@@ -22,9 +23,15 @@ function drawBlood(x:int, y:int, angle: int){
 		
 	    for (var j = 0; j < H; j++){
         	for (var i = 0; i < W; i++) {
-				pix1[background.width/2 - W/2 + x + i + background.width*(background.height/2-H/2+j+y)] = pix3[i + j*W];
+        		if(x-W/2+i<500 && x-W/2+i>-500 && y-H/2+j<500 && y-H/2+j>-500){ //to prevent drawing outside background texture
+					if(pix3[i + j*W].a != 0)pix1[background.width/2 - W/2 + x + i + background.width*(background.height/2-H/2+j+y)] = color;//pix3[i + j*W];
+				}
         	}
         }
+        pix1[1] = Color32(0,255,0,255);
+        pix1[2] = Color32(0,255,0,255);
+        pix1[3] = Color32(0,255,0,255);
+        pix1[4] = Color32(0,255,0,255);
         
         background.SetPixels32(pix1);
         background.Apply();
@@ -47,7 +54,7 @@ function rotateSquare(arr:Color32[], phi:float){
     
     for (j=0; j<H; j++){
     	for (i=0; i<W; i++){
-          arr2[j*W+i] = new Color32(0,0,0,0); //На всякий случай заполняем картинку цветом фона
+          arr2[j*W+i] = new Color32(0,0,0,0); //На всякий случай заполняем картинку alfa = 0
           
           x = cs*(i-xc)+sn*(j-yc)+xc;
           y = -sn*(i-xc)+cs*(j-yc)+yc;
