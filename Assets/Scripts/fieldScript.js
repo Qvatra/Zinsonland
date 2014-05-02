@@ -28,10 +28,6 @@ function drawBlood(x:int, y:int, angle: int, color: Color32){
 				}
         	}
         }
-        pix1[1] = Color32(0,255,0,255);
-        pix1[2] = Color32(0,255,0,255);
-        pix1[3] = Color32(0,255,0,255);
-        pix1[4] = Color32(0,255,0,255);
         
         background.SetPixels32(pix1);
         background.Apply();
@@ -54,7 +50,7 @@ function rotateSquare(arr:Color32[], phi:float){
     
     for (j=0; j<H; j++){
     	for (i=0; i<W; i++){
-          arr2[j*W+i] = new Color32(0,0,0,0); //На всякий случай заполняем картинку alfa = 0
+          //arr2[j*W+i] = new Color32(0,0,0,0); //На всякий случай заполняем картинку alfa = 0
           
           x = cs*(i-xc)+sn*(j-yc)+xc;
           y = -sn*(i-xc)+cs*(j-yc)+yc;

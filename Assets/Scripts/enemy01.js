@@ -80,17 +80,23 @@ function findClosestEnemy(){
 }
 
 function OnCollisionEnter2D (hitInfo : Collision2D) {
-	if (hitInfo.collider.name == "shot(Clone)" || hitInfo.collider.name == "BigShot(Clone)") {
+	if (hitInfo.collider.name == "shot(Clone)"){
+		var obj = hitInfo.collider.gameObject;
+		var script = obj.GetComponent(shot);
+		var ang = script.angle();
 		health--;
-		if (health <= 0) death();
+		if (health <= 0) death(ang);
+	} else if (hitInfo.collider.name == "BigShot(Clone)") {
+		health--;
+		if (health <= 0) death(0);
 	}
 }
 
-function death(){
+function death(ang){
 	var endpoint = fieldCanvasScript.point(p01.transform.position, transform.position, 0.2f);
 	fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
 
-	fieldCanvasScript.drawBlood(-transform.position.x*100,-transform.position.y*100,0, Color32(200,0,0,180));
+	fieldCanvasScript.drawBlood(-transform.position.x*100,-transform.position.y*100,ang, Color32(200,0,0,180));
 	
 	_stat.enemiesKilled++;
 	_stat.cash++;
