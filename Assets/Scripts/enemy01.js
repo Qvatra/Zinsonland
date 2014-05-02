@@ -23,18 +23,10 @@ function Start () {
 	time = 0f;
 }
 
-function addVectors(v1:Vector3, v2:Vector3){
-	var v3: Vector3;
-	v3.x = v1.x+v2.x;
-	v3.y = v1.y+v2.y;
-	v3.z = v1.z+v2.z;
-	return v3;
-};
-
 function Update () {
 	var direct : Vector3 = (p01.transform.position - transform.position).normalized*coeff;
 	var normal : Vector3 = normV(closestEnemy).normalized;
-	transform.Translate(addVectors(direct, normal).normalized*speed);
+	transform.Translate((direct + normal).normalized*speed);
 
 	time = time + Time.deltaTime;
 	if (scanTimeLowBound + Random.Range(0f,scanTimeFluctuation) < time) {
@@ -79,19 +71,6 @@ function findClosestEnemy(){
      return closestEnemy;
 }
 
-function OnCollisionEnter2D (hitInfo : Collision2D) {
-	if (hitInfo.collider.name == "shot(Clone)"){
-		var obj = hitInfo.collider.gameObject;
-		var script = obj.GetComponent(shot);
-		var ang = script.angle();
-		health--;
-		if (health <= 0) death(ang);
-	} else if (hitInfo.collider.name == "BigShot(Clone)") {
-		health--;
-		if (health <= 0) death(0);
-	}
-}
-
 function death(ang){
 	var endpoint = fieldCanvasScript.point(p01.transform.position, transform.position, 0.2f);
 	fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
@@ -120,7 +99,13 @@ function normV(nearEnemy: GameObject) {
 }
 
 function OnTriggerEnter2D (hitInfo : Collider2D) {
-	if (hitInfo.name == "player01") {
+	if (hitInfo.name == "shot(Clone)"){
+		var obj = hitInfo.gameObject;
+		var script = obj.GetComponent(shot);
+		var ang = script.angle();
+		health--;
+		if (health <= 0) death(ang);
+	} else if (hitInfo.name == "player01") {
 		eating = true;
 	}
 }

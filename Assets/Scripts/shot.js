@@ -1,15 +1,15 @@
 ﻿#pragma strict
 
+var velocity : int;
+
 private var p01 : GameObject;
 private var vx : float;
 private var vy : float;
 private	var direction : Vector2;
-var velocity : int;
-//private var camScript: _MainCam;
+private var lineRenderer : LineRenderer;
+private var time : float;
 
 function Start () {
-	//camScript = GameObject.Find("_MainCam").GetComponent('_MainCam');
-
 	_stat.shotsFired++;
 	Physics2D.IgnoreLayerCollision(8, 9, true);
 	p01  = GameObject.Find("player01");
@@ -23,12 +23,19 @@ function Start () {
 	} else { //Pistol
 		direction = Vector2(dx, dy).normalized;
 	}
-	
 	rigidbody2D.velocity = direction*velocity;
+	
+	lineRenderer = GetComponent(LineRenderer);		
+	var rndDist = _GM.aimDist * Random.Range(0f,0.8f);
+	lineRenderer.SetPosition(0, p01.transform.position + direction*rndDist);
+	lineRenderer.SetPosition(1, p01.transform.position + direction*_GM.shotDist);
+	time = Time.time;
 }
 
 function Update(){
-	if(rigidbody2D.velocity == Vector2.zero) Destroy(gameObject);
+	if(Time.time - time > 0.002){
+		Destroy(lineRenderer);
+	}
 }
 
 function angle(){
@@ -41,8 +48,8 @@ function angle(){
 	return ang;
 }
 
-function OnCollisionEnter2D (hitInfo : Collision2D) {
-	if (hitInfo.collider.name == "_Box" || hitInfo.collider.name == "enemy01(Clone)") {
+function OnTriggerEnter2D (hitInfo : Collider2D) {
+	if (hitInfo.name == "_Box" || hitInfo.name == "enemy01(Clone)") {
 		Destroy(gameObject);
 	}
 }

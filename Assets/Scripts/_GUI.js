@@ -13,7 +13,6 @@ function OnGUI () {
 	}
 
 	if (GUI.Button (Rect (10,100,200,50), "Options")) {
-		//
 	}
 
 	if (GUI.Button (Rect (10,160,200,50), "Exit")) {
