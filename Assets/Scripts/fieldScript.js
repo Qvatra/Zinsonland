@@ -74,7 +74,7 @@ function drawLine(x1:int, y1:int, x2:int, y2:int, color:Color) {
 
 	texture.Apply();
 	renderer.material.mainTexture = texture;
-};
+}
 
 static function Line (tex : Texture2D, x0 : int, y0 : int, x1 : int, y1 : int, col : Color) {
 	var dy = y1-y0;
@@ -112,7 +112,7 @@ static function Line (tex : Texture2D, x0 : int, y0 : int, x1 : int, y1 : int, c
 			tex.SetPixel(x0, y0, col);
 		}
 	}
-};
+}
 
 function point(p1 : Vector3, p2 : Vector3, dist : float){ //calculate point on line through p1 & p2 on distance dist
 	var x;
@@ -131,4 +131,4 @@ function point(p1 : Vector3, p2 : Vector3, dist : float){ //calculate point on l
 		y = p2.y + dist*(p1.y-p2.y)/(p1.x-p2.x)/Mathf.Sqrt(1+((p1.y-p2.y)/(p1.x-p2.x))*((p1.y-p2.y)/(p1.x-p2.x)));
 	}
 	return new Vector2(x, y);
-};
+}

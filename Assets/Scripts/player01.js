@@ -5,9 +5,14 @@ var shot : GameObject;
 var aim01 : Transform;
 static var aimPos : Vector3;
 var health : int;
+var cam : Camera;
+
 private var nextFire : float = 0.0;
 private var action : int = 0;
 private var localScaleX : float;
+private var mouse : Vector2;
+private var direction : Vector2;
+private var rot: int;
 
 function Start () {
 	localScaleX = transform.localScale.x;
@@ -16,6 +21,11 @@ function Start () {
 
 function Update () {
 	if (_stat.livesLeft > 0){
+		mouse = cam.ScreenToWorldPoint(Input.mousePosition);
+		direction = (transform.position - mouse).normalized;
+		transform.RotateAround (Vector3.zero, Vector3(0,0,1), 0);
+		rot = angle();
+		transform.rotation = Quaternion.Euler(0, 0, rot + 10);
 		
 		Firing();
 		
@@ -35,6 +45,17 @@ function Update () {
 		anim.SetInteger("action", 3);
 	}
 }
+
+function angle(){
+	var ang;
+	if(direction.y >= 0){
+		ang = 360 - Vector2.Angle(direction, Vector2(-1, 0));
+	} else {
+		ang = Vector2.Angle(direction, Vector2(-1, 0));
+	}
+	return ang;
+}
+
 function Firing() {
 	if(_GM.weapon == 'Pistol' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
 		nextFire = Time.time + 1;
