@@ -64,7 +64,7 @@ function Update () {
 	statusBar.GetComponent(GUIText).text = lives + enemies + shots + time;
 	
 	if(enemyNum == _stat.enemiesKilled || _stat.livesLeft <= 0) {
-		_stat.gameRunning = false;
-		Application.LoadLevel("Scores");
+		//_stat.gameRunning = false;
+		//Application.LoadLevel("Scores");
 	}
 }

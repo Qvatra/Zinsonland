@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: 570051acffe6a2246a20e488439edceb
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: Policeman12_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 744
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 744
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_2
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 744
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_3
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 744
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_4
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 744
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_5
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 744
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 558
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_7
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 558
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_8
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 558
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_9
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 558
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 372
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_11
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 372
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_12
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 372
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_13
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 372
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_14
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 372
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_16
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 186
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_17
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 186
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_18
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 186
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_19
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 186
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_20
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 186
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_22
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 0
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+    - name: Policeman12_23
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 0
+        width: 170
+        height: 186
+      alignment: 1
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

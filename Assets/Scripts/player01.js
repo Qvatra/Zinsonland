@@ -13,6 +13,7 @@ private var localScaleX : float;
 private var mouse : Vector2;
 private var direction : Vector2;
 private var rot: int;
+private var alive: boolean = true;
 
 function Start () {
 	localScaleX = transform.localScale.x;
@@ -25,12 +26,11 @@ function Update () {
 		direction = (transform.position - mouse).normalized;
 		transform.RotateAround (Vector3.zero, Vector3(0,0,1), 0);
 		rot = angle();
-		transform.rotation = Quaternion.Euler(0, 0, rot + 10);
+		transform.rotation = Quaternion.Euler(0, 0, rot);
 		
 		Firing();
 		
 		aimPos = aim01.position;
-		anim.SetInteger("action", 2);
 		transform.position.x += Input.GetAxis("Horizontal")* _GM.p01vel * Time.deltaTime;
 		transform.position.y += Input.GetAxis("Vertical")* _GM.p01vel * Time.deltaTime;
 	
@@ -42,8 +42,15 @@ function Update () {
 			anim.SetInteger("action", 0);
 		}
 	} else {
-		anim.SetInteger("action", 3);
+		if(alive)death();
 	}
+}
+
+function death(){
+	alive = false;
+	anim.SetInteger("action", 2);
+	yield WaitForSeconds(2);
+	Destroy(GetComponent(Collider2D));
 }
 
 function angle(){
