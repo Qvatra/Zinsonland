@@ -7,6 +7,8 @@ var bloodToDraw : Texture2D;
 private var pix1:Color32[];
 private var pix2:Color32[];
 private var pix3:Color32[];
+private var Wn : int;
+private var Hn : int;
 private var background : Texture2D;
 
 function Start(){
@@ -15,17 +17,18 @@ function Start(){
 
 function drawBlood(x:int, y:int, angle: int, color: Color32){
         pix1 = background.GetPixels32();
-        pix2 = bloodToDraw.GetPixels32();
+        
 		var W = bloodToDraw.width;
 		var H = bloodToDraw.height;
 		
-		pix3 = rotateSquare(pix2, Mathf.Deg2Rad*angle);
 		
-	    for (var j = 0; j < H; j++){
-        	for (var i = 0; i < W; i++) {
-        		if(x-W/2+i<500 && x-W/2+i>-500 && y-H/2+j<500 && y-H/2+j>-500){ //to prevent drawing outside background texture
-					if(pix3[i + j*W].a != 0)pix1[background.width/2 - W/2 + x + i + background.width*(background.height/2-H/2+j+y)] = color;//pix3[i + j*W];
-				}
+		pix3 = rotateSquare(Mathf.Deg2Rad*angle);
+		
+	    for (var j = 0; j < Hn; j++){
+        	for (var i = 0; i < Wn; i++) {
+        		//if(x-Wn/2+i<500 && x-Wn/2+i>-500 && y-Hn/2+j<500 && y-Hn/2+j>-500){ //to prevent drawing outside background texture
+					if(pix3[i + j*Wn].a != 0)pix1[background.width/2 - Wn/2 + x + i + background.width*(background.height/2-Hn/2+j+y)] = color;//pix3[i + j*W];
+				//}
         	}
         }
         
@@ -34,33 +37,54 @@ function drawBlood(x:int, y:int, angle: int, color: Color32){
         renderer.material.mainTexture = background;
 }
 
-function rotateSquare(arr:Color32[], phi:float){
+function rotateSquare(phi:float){
 	var x:int;
 	var y:int;
 	var i:int;
 	var j:int;
     var sn:float = Mathf.Sin(phi);
     var cs:float = Mathf.Cos(phi);
-    var texture: Texture2D = Instantiate(bloodToDraw);
-    var arr2:Color32[] = texture.GetPixels32();
-    var W:int = texture.width;
-    var H:int = texture.height;
+    var W:int = bloodToDraw.width;
+    var H:int = bloodToDraw.height;
     var xc: int = W/2;
-    var yc: int = H/2;
-    
-    for (j=0; j<H; j++){
-    	for (i=0; i<W; i++){
-          //arr2[j*W+i] = new Color32(0,0,0,0); //На всякий случай заполняем картинку alfa = 0
+	var yc: int = H/2;
+	
+	var x1: int = rotateX(W,H,sn,cs);
+	var x2: int = rotateX(-W,H,sn,cs);
+	var x3: int = rotateX(W,-H,sn,cs);
+	var x4: int = rotateX(-W,-H,sn,cs);
+	Wn = Mathf.Max(x1,x2,x3,x4);
+	
+	var y1: int = rotateY(W,H,sn,cs);
+	var y2: int = rotateY(-W,H,sn,cs);
+	var y3: int = rotateY(W,-H,sn,cs);
+	var y4: int = rotateY(-W,-H,sn,cs);
+	Hn = Mathf.Max(y1,y2,y3,y4);
+	var xn: int = Wn/2;
+	var yn: int = Hn/2;
+    Debug.Log(Wn);
+	Debug.Log(Hn);
+    pix2 = bloodToDraw.GetPixels32();
+	var arr2:Color32[] = new Color32[Wn*Hn];
+	
+    for (j=0; j<Hn; j++){
+    	for (i=0; i<Wn; i++){
           
-          x = cs*(i-xc)+sn*(j-yc)+xc;
-          y = -sn*(i-xc)+cs*(j-yc)+yc;
-          
-          if ((x>-1) && (x<W) &&(y>-1) && (y<H)){ //Проверяем, не выходит ли точка за пределы области
-          	arr2[j*W+i]=arr[y*W+x];
+          x = rotateX(i-xn,j-yn,sn,cs);
+          y = rotateY(i-xn,j-yn,sn,cs);
+          if ((x>-1) && (x<W) &&(y>-1) && (y<H)){
+          	arr2[j*Wn+i]=pix2[y*W+x];
           }
         }
     }
     return arr2;
+}
+
+function rotateX(xc:int,yc:int,sn:float,cs:float) {
+	return cs*(xc)+sn*(yc);
+}
+function rotateY(xc:int,yc:int,sn:float,cs:float) {
+	return -sn*(xc)+cs*(yc);
 }
 
 function drawLine(x1:int, y1:int, x2:int, y2:int, color:Color) {
