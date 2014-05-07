@@ -76,7 +76,6 @@ function death(ang){
 	fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
 
     var redValue = Random.Range(160, 240);
-    Debug.Log(redValue);
 	fieldCanvasScript.drawBlood(-transform.position.x*100,-transform.position.y*100,ang, Color32(redValue,0,0,180));
 	
 	_stat.enemiesKilled++;

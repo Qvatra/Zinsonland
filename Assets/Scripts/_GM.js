@@ -5,6 +5,7 @@ static var fieldW : float = 10f;
 static var fieldH : float = 10f;
 static var aimDist : float = 0.5f;
 static var shotDist : int = 2.5f;
+static var shotAppearDist : float = 0.25f;
 static var weapon : String = 'Pistol'; //'Shotgun';//'Assault_rifle';
 
 private var time : String;

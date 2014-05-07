@@ -1,0 +1,251 @@
+fileFormatVersion: 2
+guid: 489b7fb7cc054ee46b78290be3b21f76
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  - buildTarget: Standalone
+    maxTextureSize: 4096
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: Policeman18_row_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_5
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_6
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_7
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_8
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_9
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_10
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_11
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_12
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_13
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_14
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_15
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_16
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_17
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_18
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_19
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_20
+      rect:
+        serializedVersion: 2
+        x: 3450
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Policeman18_row_21
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 99
+        width: 150
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

@@ -26,7 +26,7 @@ function Start () {
 	rigidbody2D.velocity = direction*velocity;
 	
 	lineRenderer = GetComponent(LineRenderer);		
-	var rndDist = _GM.aimDist * Random.Range(0f,0.8f);
+	var rndDist = _GM.shotAppearDist + _GM.aimDist * Random.Range(0f,0.8f);
 	lineRenderer.SetPosition(0, p01.transform.position + direction*rndDist);
 	lineRenderer.SetPosition(1, p01.transform.position + direction*_GM.shotDist);
 	time = Time.time;

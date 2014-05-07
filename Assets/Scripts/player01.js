@@ -49,7 +49,7 @@ function Update () {
 function death(){
 	alive = false;
 	anim.SetInteger("action", 2);
-	yield WaitForSeconds(2);
+	yield WaitForSeconds(1);
 	Destroy(GetComponent(Collider2D));
 }
 
@@ -64,18 +64,20 @@ function angle(){
 }
 
 function Firing() {
+	var position: Vector3 = Vector3(transform.position.x - direction.x*_GM.shotAppearDist, transform.position.y - direction.y*_GM.shotAppearDist, transform.position.z);
+
 	if(_GM.weapon == 'Pistol' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
 		nextFire = Time.time + 1;
-		Instantiate (shot, transform.position, transform.rotation);
+		Instantiate (shot, position, transform.rotation);
 	} else if(_GM.weapon == 'Assault_rifle' && Input.GetButton("Fire1") && Time.time > nextFire){
 		nextFire = Time.time + 0.2;
-		Instantiate (shot, transform.position, transform.rotation);
+		Instantiate (shot, position, transform.rotation);
 	} else if(_GM.weapon == 'Shotgun' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
 		nextFire = Time.time + 1.5;
-		Instantiate (shot, transform.position, transform.rotation);
-		Instantiate (shot, transform.position, transform.rotation);
-		Instantiate (shot, transform.position, transform.rotation);
-		Instantiate (shot, transform.position, transform.rotation);
-		Instantiate (shot, transform.position, transform.rotation);
+		Instantiate (shot, position, transform.rotation);
+		Instantiate (shot, position, transform.rotation);
+		Instantiate (shot, position, transform.rotation);
+		Instantiate (shot, position, transform.rotation);
+		Instantiate (shot, position, transform.rotation);
 	}
 }
