@@ -62,8 +62,7 @@ function rotateSquare(phi:float){
 	Hn = Mathf.Max(y1,y2,y3,y4);
 	var xn: int = Wn/2;
 	var yn: int = Hn/2;
-    Debug.Log(Wn);
-	Debug.Log(Hn);
+
     pix2 = bloodToDraw.GetPixels32();
 	var arr2:Color32[] = new Color32[Wn*Hn];
 	

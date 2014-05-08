@@ -6,6 +6,10 @@ var aim01 : Transform;
 static var aimPos : Vector3;
 var health : int;
 var cam : Camera;
+var audioPistol: AudioClip;
+var audioAssault_rifle: AudioClip;
+var audioShotgun: AudioClip;
+var audioDeath: AudioClip;
 
 private var nextFire : float = 0.0;
 private var action : int = 0;
@@ -28,7 +32,7 @@ function Update () {
 		rot = angle();
 		transform.rotation = Quaternion.Euler(0, 0, rot);
 		
-		Firing();
+		if(Time.time > 1)Firing();
 		
 		aimPos = aim01.position;
 		transform.position.x += Input.GetAxis("Horizontal")* _GM.p01vel * Time.deltaTime;
@@ -47,6 +51,7 @@ function Update () {
 }
 
 function death(){
+	audio.PlayOneShot(audioDeath, 0.5);
 	alive = false;
 	anim.SetInteger("action", 2);
 	yield WaitForSeconds(1);
@@ -69,9 +74,11 @@ function Firing() {
 	if(_GM.weapon == 'Pistol' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
 		nextFire = Time.time + 1;
 		Instantiate (shot, position, transform.rotation);
+	    audio.PlayOneShot(audioPistol, 0.4);
 	} else if(_GM.weapon == 'Assault_rifle' && Input.GetButton("Fire1") && Time.time > nextFire){
 		nextFire = Time.time + 0.2;
 		Instantiate (shot, position, transform.rotation);
+		audio.PlayOneShot(audioAssault_rifle, 0.8);
 	} else if(_GM.weapon == 'Shotgun' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
 		nextFire = Time.time + 1.5;
 		Instantiate (shot, position, transform.rotation);
@@ -79,5 +86,6 @@ function Firing() {
 		Instantiate (shot, position, transform.rotation);
 		Instantiate (shot, position, transform.rotation);
 		Instantiate (shot, position, transform.rotation);
+		audio.PlayOneShot(audioShotgun, 0.7);
 	}
 }
