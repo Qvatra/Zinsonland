@@ -8,10 +8,12 @@ private var vy : float;
 private	var direction : Vector2;
 private var lineRenderer : LineRenderer;
 private var time : float;
+private var toDelTime : float = 0f; //should be 0f;
 
 function Start () {
 	_stat.shotsFired++;
 	Physics2D.IgnoreLayerCollision(8, 9, true);
+	Physics2D.IgnoreLayerCollision(9, 9, true);
 	p01  = GameObject.Find("player01");
 	var dx = player01.aimPos.x - p01.transform.position.x;
 	var dy = player01.aimPos.y - p01.transform.position.y;
@@ -33,6 +35,15 @@ function Start () {
 }
 
 function Update(){
+	//deletes shot after 0.05 sec if it slows down
+	if(toDelTime==0f && rigidbody2D.velocity.magnitude < velocity) {
+		toDelTime = Time.time;
+	}
+	if(toDelTime!=0f && Time.time - toDelTime > 0.05){
+		Destroy(gameObject);
+	}
+	//eos
+	
 	if(Time.time - time > 0.002){
 		Destroy(lineRenderer);
 	}
@@ -48,8 +59,8 @@ function angle(){
 	return ang;
 }
 
-function OnTriggerEnter2D (hitInfo : Collider2D) {
-	if (hitInfo.name == "_Box" || hitInfo.name == "enemy01(Clone)") {
+function OnCollisionEnter2D (hitInfo : Collision2D) { //destruction of a shot is also in Enemy script to make both Destructions syncronized
+	if (hitInfo.collider.name == "_Box") {
 		Destroy(gameObject);
 	}
 }

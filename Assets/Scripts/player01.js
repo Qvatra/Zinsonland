@@ -74,9 +74,9 @@ function Firing() {
 	if(_GM.weapon == 'Pistol' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
 		nextFire = Time.time + 1;
 		Instantiate (shot, position, transform.rotation);
-	    audio.PlayOneShot(audioPistol, 0.4);
+	    audio.PlayOneShot(audioPistol, 0.3);
 	} else if(_GM.weapon == 'Assault_rifle' && Input.GetButton("Fire1") && Time.time > nextFire){
-		nextFire = Time.time + 0.2;
+		nextFire = Time.time + 0.17;
 		Instantiate (shot, position, transform.rotation);
 		audio.PlayOneShot(audioAssault_rifle, 0.8);
 	} else if(_GM.weapon == 'Shotgun' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
@@ -86,6 +86,6 @@ function Firing() {
 		Instantiate (shot, position, transform.rotation);
 		Instantiate (shot, position, transform.rotation);
 		Instantiate (shot, position, transform.rotation);
-		audio.PlayOneShot(audioShotgun, 0.7);
+		audio.PlayOneShot(audioShotgun, 0.6);
 	}
 }

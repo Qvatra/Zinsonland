@@ -104,6 +104,7 @@ function OnTriggerEnter2D (hitInfo : Collider2D) {
 		var obj = hitInfo.gameObject;
 		var script = obj.GetComponent(shot);
 		var ang = script.angle();
+		Destroy(hitInfo.gameObject);
 		health--;
 		if (health <= 0) death(ang);
 	} else if (hitInfo.name == "player01") {
