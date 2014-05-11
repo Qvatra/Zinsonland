@@ -6,6 +6,7 @@ var coeff : float;
 var scanTimeLowBound : float;
 var scanTimeFluctuation: float;
 var sightDist : float;
+var blood01 : GameObject;
 
 //private var cam: Camera;
 private var fieldCanvasScript : fieldScript;
@@ -71,12 +72,12 @@ function findClosestEnemy(){
      return closestEnemy;
 }
 
-function death(ang){
-	var endpoint = fieldCanvasScript.point(p01.transform.position, transform.position, 0.2f);
-	fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
-
-    var redValue = Random.Range(160, 240);
-	fieldCanvasScript.drawBlood(-transform.position.x*100,-transform.position.y*100,ang, Color32(redValue,0,0,180));
+function death(dir){
+	//var endpoint = fieldCanvasScript.point(p01.transform.position, transform.position, 0.2f);
+	//fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
+	Instantiate (blood01, transform.position, Quaternion.FromToRotation(Vector3.right,dir));
+    //var redValue = Random.Range(160, 240);
+	//fieldCanvasScript.drawBlood(-transform.position.x*100,-transform.position.y*100,ang, Color32(redValue,0,0,180));
 	
 	_stat.enemiesKilled++;
 	_stat.cash++;
@@ -103,10 +104,10 @@ function OnTriggerEnter2D (hitInfo : Collider2D) {
 	if (hitInfo.name == "shot(Clone)"){
 		var obj = hitInfo.gameObject;
 		var script = obj.GetComponent(shot);
-		var ang = script.angle();
+		var dir = script.bulletDirection();
 		Destroy(hitInfo.gameObject);
 		health--;
-		if (health <= 0) death(ang);
+		if (health <= 0) death(dir);
 	} else if (hitInfo.name == "player01") {
 		eating = true;
 	}

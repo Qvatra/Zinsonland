@@ -58,6 +58,11 @@ function angle(){
 	}
 	return ang;
 }
+function bulletDirection(){
+	var dir: Vector3 = Vector3(direction.x,direction.y);
+	return dir;
+}
+
 
 function OnCollisionEnter2D (hitInfo : Collision2D) { //destruction of a shot is also in Enemy script to make both Destructions syncronized
 	if (hitInfo.collider.name == "_Box") {

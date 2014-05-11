@@ -44,8 +44,8 @@ TextureImporter:
     textureFormat: 13
     compressionQuality: 50
   - buildTarget: Standalone
-    maxTextureSize: 64
-    textureFormat: 1
+    maxTextureSize: 128
+    textureFormat: 5
     compressionQuality: 50
   spriteSheet:
     sprites: []
