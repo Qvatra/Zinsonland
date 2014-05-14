@@ -7,7 +7,7 @@ static var aimDist : float = 0.5f;
 static var shotDist : int = 2.5f;
 static var shotAppearDist : float = 0.25f;
 static var weapon : String = 'Pistol'; //'Shotgun';//'Assault_rifle';
-
+static var weaponLoad : int = 9;
 private var time : String;
 private var enemies : String;
 private var shots : String;

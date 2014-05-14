@@ -69,23 +69,43 @@ function angle(){
 }
 
 function Firing() {
-	var position: Vector3 = Vector3(transform.position.x - direction.x*_GM.shotAppearDist, transform.position.y - direction.y*_GM.shotAppearDist, transform.position.z);
+	if (_GM.weaponLoad > 0){
+		var position: Vector3 = Vector3(transform.position.x - direction.x*_GM.shotAppearDist, transform.position.y - direction.y*_GM.shotAppearDist, transform.position.z);
 
-	if(_GM.weapon == 'Pistol' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
-		nextFire = Time.time + 1;
-		Instantiate (shot, position, transform.rotation);
-	    audio.PlayOneShot(audioPistol, 0.3);
-	} else if(_GM.weapon == 'Assault_rifle' && Input.GetButton("Fire1") && Time.time > nextFire){
-		nextFire = Time.time + 0.17;
-		Instantiate (shot, position, transform.rotation);
-		audio.PlayOneShot(audioAssault_rifle, 0.8);
-	} else if(_GM.weapon == 'Shotgun' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
-		nextFire = Time.time + 1.5;
-		Instantiate (shot, position, transform.rotation);
-		Instantiate (shot, position, transform.rotation);
-		Instantiate (shot, position, transform.rotation);
-		Instantiate (shot, position, transform.rotation);
-		Instantiate (shot, position, transform.rotation);
-		audio.PlayOneShot(audioShotgun, 0.6);
+		if(_GM.weapon == 'Pistol' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
+			nextFire = Time.time + 1;
+			Instantiate (shot, position, transform.rotation);
+	    	audio.PlayOneShot(audioPistol, 0.3);
+	    	_GM.weaponLoad--;
+		} else if(_GM.weapon == 'Assault_rifle' && Input.GetButton("Fire1") && Time.time > nextFire){
+			nextFire = Time.time + 0.17;
+			Instantiate (shot, position, transform.rotation);
+			audio.PlayOneShot(audioAssault_rifle, 0.8);
+			_GM.weaponLoad--;
+		} else if(_GM.weapon == 'Shotgun' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
+			nextFire = Time.time + 1.5;
+			Instantiate (shot, position, transform.rotation);
+			Instantiate (shot, position, transform.rotation);
+			Instantiate (shot, position, transform.rotation);
+			Instantiate (shot, position, transform.rotation);
+			Instantiate (shot, position, transform.rotation);
+			audio.PlayOneShot(audioShotgun, 0.6);
+			_GM.weaponLoad--;
+		}
+	} else {
+		reloadWeapon();
 	}
+}
+
+function reloadWeapon() {
+	if(_GM.weapon == 'Pistol' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
+			nextFire = Time.time + 3;
+			_GM.weaponLoad = 9;
+		} else if(_GM.weapon == 'Assault_rifle' && Input.GetButton("Fire1") && Time.time > nextFire){
+			nextFire = Time.time + 3;
+			_GM.weaponLoad = 30;
+		} else if(_GM.weapon == 'Shotgun' && Input.GetButtonDown("Fire1") && Time.time > nextFire){
+			nextFire = Time.time + 3;
+			_GM.weaponLoad = 8;
+		}
 }
