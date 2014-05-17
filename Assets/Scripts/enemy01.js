@@ -8,8 +8,7 @@ var scanTimeFluctuation: float;
 var sightDist : float;
 var blood01 : GameObject;
 
-//private var cam: Camera;
-private var fieldCanvasScript : fieldScript;
+//private var fieldCanvasScript : fieldScript;
 private var time: float;
 private var closestEnemy : GameObject;
 private var eating: boolean;
@@ -19,8 +18,7 @@ private var p01 : GameObject;
 function Start () {
 	speed = speed/1000;
 	p01 = GameObject.Find("player01");
-	fieldCanvasScript = GameObject.Find("FieldCanvas").GetComponent("fieldScript");
-//	cam = GameObject.Find("_MainCam").GetComponent(Camera);
+	//fieldCanvasScript = GameObject.Find("FieldCanvas").GetComponent("fieldScript");
 	time = 0f;
 }
 

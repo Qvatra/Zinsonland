@@ -3,13 +3,11 @@
 var player01 : Transform;
 var cam : Camera;
 private var mouse:Vector2;
-
-function Start () {
-
-}
+private var direction : Vector2; //normalized vector of shoting direction
 
 function Update () {
-	mouse = cam.ScreenToWorldPoint(Input.mousePosition);
-	transform.position.y = player01.position.y + _GM.aimDist * (mouse.y - player01.position.y)/Mathf.Sqrt((mouse.y-player01.position.y)*(mouse.y-player01.position.y)+(mouse.x-player01.position.x)*(mouse.x-player01.position.x));
-	transform.position.x = player01.position.x + _GM.aimDist * (mouse.x - player01.position.x)/Mathf.Sqrt((mouse.y-player01.position.y)*(mouse.y-player01.position.y)+(mouse.x-player01.position.x)*(mouse.x-player01.position.x));
+	var mouse = cam.ScreenToViewportPoint(Input.mousePosition);
+	direction = (mouse - Vector2(0.5, 0.5)).normalized;
+	transform.position = player01.position + _GM.aimDist * direction;
+	transform.position.z = 0.5;
 }
