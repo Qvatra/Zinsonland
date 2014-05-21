@@ -10,6 +10,7 @@ function Update () {
 
 function OnTriggerEnter2D (hitInfo : Collider2D) {
 	if (hitInfo.name == "player01" && !toDel) {
+		if(hitInfo.gameObject.GetComponent(player01).state == 'reload') return;
 		toDel = true;
 		_GM.weapon = 'Assault_rifle';
 		_GM.weaponLoad = 30;
