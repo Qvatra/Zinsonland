@@ -1,0 +1,557 @@
+fileFormatVersion: 2
+guid: 3dd03f36641a0f54ebc5511054b14b08
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: Medic180x222_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1557
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1557
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_2
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1557
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1557
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_4
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1557
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_5
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1557
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_6
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1557
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_7
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1557
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_8
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1335
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_9
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1335
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_10
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1335
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_11
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1335
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_12
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1335
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_13
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1335
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1113
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_15
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1113
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_16
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1113
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_17
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1113
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_18
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1113
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_19
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1113
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_20
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1113
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 891
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_22
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 891
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_23
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 891
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_24
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 891
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_25
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 891
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_26
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 891
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_27
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 891
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_28
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 891
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 669
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_30
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 669
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_31
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 669
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_32
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 669
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_33
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 669
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_34
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 669
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_35
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 669
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 447
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_37
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 447
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_38
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 447
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_39
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 447
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_40
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 447
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_41
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 447
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_42
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 447
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 225
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_44
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 225
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_45
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 225
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_46
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 225
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_47
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 225
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_48
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 225
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_49
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 225
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_51
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 3
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_52
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 3
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_53
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 3
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_54
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 3
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Medic180x222_55
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 3
+        width: 180
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

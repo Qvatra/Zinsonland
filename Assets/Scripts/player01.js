@@ -2,7 +2,7 @@
 
 var anim : Animator;
 var feetAnim : Animator;
-var shot : GameObject;
+var shotPrefab : GameObject;
 var aim01 : Transform;
 static var aimPos : Vector3;
 var health : int;
@@ -18,16 +18,17 @@ var audioReloadShotgun3: AudioClip;
 var audioReloadPistol: AudioClip;
 
 private var nextFire : float = 1f; //1 to prevent shot at button
-private var action : int = 0;
 private var localScaleX : float;
 private var direction : Vector2; //normalized vector of shoting direction
 private var alive: boolean = true;
 var state: String = 'stand'; //state of animation clip
 private var moving: boolean = false;
+private var soldier01: GameObject;
 
 function Start () {
 	localScaleX = transform.localScale.x;
 	_stat.livesLeft = health;
+	soldier01 = GameObject.Find("soldier01");
 }
 
 function Update () {
@@ -37,10 +38,7 @@ function Update () {
 		transform.rotation = Quaternion.Euler(0, 0, angle());
 		
 		if(Input.GetButtonDown("Fire2")) {
-			Debug.Log("fire2 pressed");
-			var soldier = GameObject.Find("soldier01");
-			//todo
-			soldier.SendMessage("setDestination",cam.ScreenToViewportPoint(Input.mousePosition) - Vector2(0.5, 0.5));
+			soldier01.SendMessage("setDestination",cam.ViewportToWorldPoint(cam.ScreenToViewportPoint(Input.mousePosition - Vector2(0.5, 0.5))));
 		}
 		
 		if(_GM.weaponLoad > 0){
@@ -113,31 +111,36 @@ function angle(){
 	return ang;
 }
 
+function shotDirection(){
+	return direction;
+}
+
+function createShot(weapon){
+	var shotClone: GameObject = Instantiate(shotPrefab);
+	var shotCloneScript = shotClone.GetComponent(shot);
+	shotCloneScript.shotDirection = direction;
+	shotCloneScript.startPosition = transform.position;
+	shotCloneScript.weapon = weapon;
+}
+
 function firing() {
 		state = 'fire';
-		var position: Vector3 = transform.position + _GM.shotAppearDist*direction;
 
 		if(Input.GetButtonDown("Fire1") && _GM.weapon == 'Pistol'){
 			nextFire = Time.time + 0.7;
-			Instantiate (shot, position, transform.rotation);
+			createShot(_GM.weapon);
 	    	audio.PlayOneShot(audioPistol, 0.3);
 	    	_GM.weaponLoad--;
 		} else if(Input.GetButton("Fire1") && _GM.weapon == 'Assault_rifle'){
 			nextFire = Time.time + 0.17;
-			Instantiate (shot, position, transform.rotation);
+			createShot(_GM.weapon);
 			audio.PlayOneShot(audioAssault_rifle, 0.8);
 			_GM.weaponLoad--;
 		} else if(Input.GetButtonDown("Fire1") &&_GM.weapon == 'Shotgun'){
-
 			nextFire = Time.time + 1.5;
-			Instantiate (shot, position, transform.rotation);
-			Instantiate (shot, position, transform.rotation);
-			Instantiate (shot, position, transform.rotation);
-			Instantiate (shot, position, transform.rotation);
-			Instantiate (shot, position, transform.rotation);
-			Instantiate (shot, position, transform.rotation);
-			Instantiate (shot, position, transform.rotation);
-			Instantiate (shot, position, transform.rotation);
+			for(var i = 0; i < 9; i++){
+				createShot(_GM.weapon);
+			}
 			audio.PlayOneShot(audioShotgun, 0.3);
 			_GM.weaponLoad--;
 			

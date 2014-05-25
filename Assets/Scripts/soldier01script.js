@@ -1,5 +1,8 @@
 ﻿#pragma strict
-	var shot : GameObject;
+
+	var anim : Animator;
+	var feetAnim : Animator;
+	var shotPrefab : GameObject;
 	var health : int;
 	var livesLeft : float;
 	var moveTo : Vector2;
@@ -8,7 +11,10 @@
 	var destinationY : float;
 	var velosity : float = 0.4f;
 	var accuracy : float = 0.1f;
+	
 	private var nextFire : float = 0.1f;
+	private var moving: boolean = false;
+	
 function Start () {
 	livesLeft = health;
 	destinationX = -2;
@@ -20,16 +26,35 @@ function Update () {
 	shootTo = getShootDirection();
 	transform.position.x += moveTo.x * velosity * Time.deltaTime;
 	transform.position.y += moveTo.y* velosity * Time.deltaTime;
+	transform.rotation = Quaternion.Euler(0, 0, angle(shootTo));
 	firing();
 }
 
 function getMoveDirection() {
 	var vektor = Vector2(destinationX-transform.position.x, destinationY-transform.position.y);
-	if (vektor.magnitude>0.0001) {
+	if (vektor.magnitude > 0.01) {
+		if(!moving){
+			moving = true;
+			anim.speed = 1f;
+			anim.SetInteger("action", 11);
+			feetAnim.SetBool("walk", moving);
+		}
 		return vektor.normalized;
 	} else {
-		return Vector2(0,0);
+		if(moving){
+			moving = false;
+			anim.speed = 0.4f;
+			anim.SetInteger("action", 11);
+			feetAnim.SetBool("walk", moving);
+		}
+		return Vector2.zero;
 	}
+}
+
+function angle(dir: Vector2){
+	var ang = Vector2.Angle(dir, Vector2.right);
+	if(dir.y < 0)ang = -ang;
+	return ang;
 }
 
 function getShootDirection() {
@@ -38,7 +63,7 @@ function getShootDirection() {
 		var vek = Vector2(enemy.transform.position.x + Random.Range(-accuracy, accuracy), enemy.transform.position.y + Random.Range(-accuracy, accuracy));
 		return vek.normalized;
 	} else {
-		return Vector2(0,0);
+		return Vector2.zero;
 	}
 }
 
@@ -63,11 +88,18 @@ function findClosestEnemy(){
      return closestEnemy;
 }
 
+function createShot(weapon){
+	var shotClone: GameObject = Instantiate(shotPrefab);
+	var shotCloneScript = shotClone.GetComponent(shot);
+	shotCloneScript.shotDirection = shootTo;
+	shotCloneScript.startPosition = transform.position;
+	shotCloneScript.weapon = weapon;
+}
+
 function firing() {
-	if(Time.time > nextFire) {
+	if(Time.time > nextFire && shootTo != Vector2.zero) {
 			Debug.Log("soldier firing");
 			nextFire = Time.time + 0.7;
-			var position: Vector3 = transform.position + _GM.shotAppearDist*shootTo;
-			Instantiate (shot, position, transform.rotation);
+			createShot('Pistol');
 	}
 }
