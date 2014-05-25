@@ -36,6 +36,13 @@ function Update () {
 		
 		transform.rotation = Quaternion.Euler(0, 0, angle());
 		
+		if(Input.GetButtonDown("Fire2")) {
+			Debug.Log("fire2 pressed");
+			var soldier = GameObject.Find("soldier01");
+			//todo
+			soldier.SendMessage("setDestination",cam.ScreenToViewportPoint(Input.mousePosition) - Vector2(0.5, 0.5));
+		}
+		
 		if(_GM.weaponLoad > 0){
 			if(Time.time > nextFire) firing();
 		} else if(state != 'reload' && state != 'reload_shot') {
