@@ -38,12 +38,18 @@ firing();
 }
 
 function getMoveDirection() {
-	var flagDistance = Vector2(destinationX-transform.position.x, destinationY-transform.position.y);
-var enemyDistance = Vector2(destinationX-transform.position.x, destinationY-transform.position.y);
 var vektor :Vector2;
+	var flagDistance = Vector2(destinationX-transform.position.x, destinationY-transform.position.y);
+if (currentEnemy != null) {
+var enemyDistance = Vector2(currentEnemy.transform.position.x-transform.position.x, currentEnemy.transform.position.y-transform.position.y);
+}
+if ((currentEnemy == null) || (enemyDistance.magnitude>dangerRadius*5)) {
+ vektor = flagDistance.normalized;
+} else {
 if (flagDistance.magnitude < defendRadius) {
   if (enemyDistance.magnitude > (dangerRadius*2)) {
-      vektor = enemyDistance.normalized;
+        vektor = enemyDistance.normalized;
+      }
   } else { 
       if (enemyDistance.magnitude < dangerRadius) {
         vektor = -enemyDistance.normalized;
@@ -56,16 +62,21 @@ if (flagDistance.magnitude < defendRadius) {
       vektor = flagDistance.normalized;
   } else { 
       if (enemyDistance.magnitude < dangerRadius) {
-        vektor = 0.75*enemyDistance.normalized*(enemyDistance.magnitude-dangerRadius*1.5)*2/dangerRadius+0.25*flagDistance.normalized;
+        vektor = (0.75*enemyDistance.normalized/dangerRadius+0.25*flagDistance.normalized).normalized;
       } else {
-        vektor = 0.5*enemyDistance.normalized*(enemyDistance.magnitude-dangerRadius*1.5)*2/dangerRadius+0.5*flagDistance.normalized;
+        vektor = (0.25*enemyDistance.normalized/dangerRadius+0.75*flagDistance.normalized).normalized;
       }
 }
-	if (vektor.magnitude > 0.01) {
-		return vektor;
+}
+          if (vektor.magnitude > 1) {
+		Debug.Log("incorrect soldier AI, "+vektor);
 	 } else {
-                return Vector2.zero;
-	}
+                if (vektor.magnitude < 0.01) {
+		  vektor=Vector2.zero;
+	        }
+           }
+
+return vektor;
 }
 
 function angle(dir: Vector2){
