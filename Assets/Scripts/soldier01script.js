@@ -11,10 +11,11 @@
 	var destinationY : float;
 	var velosity : float = 0.4f;
 	var accuracy : float = 0.1f;
-	
+	var currentEnemy : GameObject;
 	private var nextFire : float = 0.1f;
-	private var moving: boolean = false;
-	
+        private var nextScan : float = 0.1f;
+	var defendRadius : float = 1.0f; 
+        var dangerRadius : float = 1.0f; 
 function Start () {
 	livesLeft = health;
 	destinationX = -2;
@@ -22,32 +23,48 @@ function Start () {
 }
 
 function Update () {
+
+        if (Time.time > nextScan) {
+             scanTerritory();
+             nextScan = Time.time + 0.1;
+        }
+        
 	moveTo = getMoveDirection();
 	shootTo = getShootDirection();
-	transform.position.x += moveTo.x * velosity * Time.deltaTime;
-	transform.position.y += moveTo.y* velosity * Time.deltaTime;
-	transform.rotation = Quaternion.Euler(0, 0, angle(shootTo));
-	firing();
+
+
+moving();
+firing();
 }
 
 function getMoveDirection() {
-	var vektor = Vector2(destinationX-transform.position.x, destinationY-transform.position.y);
+	var flagDistance = Vector2(destinationX-transform.position.x, destinationY-transform.position.y);
+var enemyDistance = Vector2(destinationX-transform.position.x, destinationY-transform.position.y);
+var vektor :Vector2;
+if (flagDistance.magnitude < defendRadius) {
+  if (enemyDistance.magnitude > (dangerRadius*2)) {
+      vektor = enemyDistance.normalized;
+  } else { 
+      if (enemyDistance.magnitude < dangerRadius) {
+        vektor = -enemyDistance.normalized;
+      } else {
+        vektor = enemyDistance.normalized*(enemyDistance.magnitude-dangerRadius*1.5)*2/dangerRadius;
+      }
+  }
+} else {
+    if (enemyDistance.magnitude > (dangerRadius*2)) {
+      vektor = flagDistance.normalized;
+  } else { 
+      if (enemyDistance.magnitude < dangerRadius) {
+        vektor = 0.75*enemyDistance.normalized*(enemyDistance.magnitude-dangerRadius*1.5)*2/dangerRadius+0.25*flagDistance.normalized;
+      } else {
+        vektor = 0.5*enemyDistance.normalized*(enemyDistance.magnitude-dangerRadius*1.5)*2/dangerRadius+0.5*flagDistance.normalized;
+      }
+}
 	if (vektor.magnitude > 0.01) {
-		if(!moving){
-			moving = true;
-			anim.speed = 1f;
-			anim.SetInteger("action", 11);
-			feetAnim.SetBool("walk", moving);
-		}
-		return vektor.normalized;
-	} else {
-		if(moving){
-			moving = false;
-			anim.speed = 0.4f;
-			anim.SetInteger("action", 11);
-			feetAnim.SetBool("walk", moving);
-		}
-		return Vector2.zero;
+		return vektor;
+	 } else {
+                return Vector2.zero;
 	}
 }
 
@@ -58,9 +75,9 @@ function angle(dir: Vector2){
 }
 
 function getShootDirection() {
-	var enemy = findClosestEnemy();
+	var enemy = currentEnemy;
 	if (enemy!=null) {
-		var vek = Vector2(enemy.transform.position.x + Random.Range(-accuracy, accuracy), enemy.transform.position.y + Random.Range(-accuracy, accuracy));
+		var vek = Vector2(enemy.transform.position.x - transform.position.x + Random.Range(-accuracy, accuracy), enemy.transform.position.y - transform.position.y + Random.Range(-accuracy, accuracy));
 		return vek.normalized;
 	} else {
 		return Vector2.zero;
@@ -70,6 +87,7 @@ function getShootDirection() {
 function setDestination(mouse : Vector3) {
 	destinationX = mouse.x;
 	destinationY = mouse.y;
+        scanTerritory();
 }
 
 function findClosestEnemy(){
@@ -102,4 +120,22 @@ function firing() {
 			nextFire = Time.time + 0.7;
 			createShot('Pistol');
 	}
+function scanTerritory() {
+           currentEnemy = findClosestEnemy();
+}
+function moving() {
+        transform.position.x += moveTo.x * velosity * Time.deltaTime;
+	transform.position.y += moveTo.y* velosity * Time.deltaTime;
+	transform.rotation = Quaternion.Euler(0, 0, angle(shootTo));
+        if  (moveTo != Vector2.zero ) {
+			anim.speed = 1f;
+			anim.SetInteger("action", 11);
+			feetAnim.SetBool("walk", true);
+		} else {
+			anim.speed = 0.4f;
+			anim.SetInteger("action", 11);
+			feetAnim.SetBool("walk", false);
+		}
+         }
+}
 }
