@@ -16,7 +16,6 @@ private var eating: boolean;
 private var p01 : GameObject;
 private var direct: Vector2; //direction to target
 private var normal: Vector2; //normal to target
-private var moveTo: Vector2; //target coords
 private var alive: boolean = true;
 
 function Start () {
@@ -49,7 +48,7 @@ function Update () {
 	
 	transform.position.x += direction.x * speed * Time.deltaTime;
 	transform.position.y += direction.y * speed * Time.deltaTime;
-	transform.rotation = Quaternion.Euler(0, 0, angle());
+	transform.rotation = Quaternion.Euler(0, 0, angle(direct + normal*coeff));
 
 	time = time + Time.deltaTime;
 	if (scanTimeLowBound + Random.Range(0f,scanTimeFluctuation) < time) {
@@ -79,9 +78,9 @@ function Update () {
 	}
 }
 
-function angle(){
-	var ang = Vector2.Angle(direct, Vector2.right);
-	if(direct.y < 0)ang = -ang;
+function angle(dir: Vector2){
+	var ang = Vector2.Angle(dir, Vector2.right);
+	if(dir.y < 0)ang = -ang;
 	return ang;
 }
 
@@ -102,6 +101,7 @@ function findClosestEnemy(){
 }
 
 function death(dir){
+	transform.rotation = Quaternion.Euler(0, 0, angle(direct));
 	//var endpoint = fieldCanvasScript.point(p01.transform.position, transform.position, 0.2f);
 	//fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
 	Instantiate (blood01, transform.position, Quaternion.FromToRotation(Vector3.right,dir));
@@ -113,7 +113,7 @@ function death(dir){
 	
 	var dist: float = (p01.transform.position - transform.position).magnitude;
 	if(dist < 0.55){
-		anim.speed = 2f;
+		anim.speed = 2.2f;
 		anim.SetInteger("action", 3);
 	} else {
 		anim.speed = 2f;
@@ -122,6 +122,7 @@ function death(dir){
 	alive = false;
 	yield WaitForSeconds(1);
 	Destroy(GetComponent(Collider2D));
+	transform.position.z = 0.5;
 	//Destroy(gameObject);
 }
 

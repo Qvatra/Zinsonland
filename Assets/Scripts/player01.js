@@ -24,6 +24,7 @@ private var alive: boolean = true;
 var state: String = 'stand'; //state of animation clip
 private var moving: boolean = false;
 private var soldier01: GameObject;
+private var mouse : Vector2;
 
 function Start () {
 	localScaleX = transform.localScale.x;
@@ -33,12 +34,15 @@ function Start () {
 
 function Update () {
 	if (_stat.livesLeft > 0){
-		direction = (cam.ScreenToViewportPoint(Input.mousePosition) - Vector2(0.5, 0.5)).normalized;
+		mouse = cam.ScreenToWorldPoint(Input.mousePosition);
+		direction.x = mouse.x - transform.position.x;
+		direction.y = mouse.y - transform.position.y;
+		direction = direction.normalized;
 		
 		transform.rotation = Quaternion.Euler(0, 0, angle());
 		
 		if(Input.GetButtonDown("Fire2")) {
-			soldier01.SendMessage("setDestination",cam.ViewportToWorldPoint(cam.ScreenToViewportPoint(Input.mousePosition - Vector2(0.5, 0.5))));
+			soldier01.SendMessage("setDestination",cam.ScreenToWorldPoint(Input.mousePosition));
 		}
 		
 		if(_GM.weaponLoad > 0){
