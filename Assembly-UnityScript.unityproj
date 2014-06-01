@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{0248B2A2-4B75-482F-727C-BE23CCF7B919}</ProjectGuid>
+	<ProjectGuid>{2C65568D-5CE5-743D-A313-592933FCC3F3}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\_MainCam.js" />
      <Compile Include="Assets\Scripts\_stat.js" />
      <Compile Include="Assets\Scripts\aim01.js" />
+     <Compile Include="Assets\Scripts\blood01script.js" />
      <Compile Include="Assets\Scripts\boxScript.js" />
      <Compile Include="Assets\Scripts\cursor.js" />
      <Compile Include="Assets\Scripts\enemy01.js" />

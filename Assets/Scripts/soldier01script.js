@@ -137,7 +137,7 @@ function scanTerritory() {
            currentEnemy = findClosestEnemy();
 }
 function moving() {
-        transform.position.x += moveTo.x * velosity * Time.deltaTime;
+    transform.position.x += moveTo.x * velosity * Time.deltaTime;
 	transform.position.y += moveTo.y* velosity * Time.deltaTime;
 	transform.rotation = Quaternion.Euler(0, 0, angle(shootTo));
         if  (moveTo != Vector2.zero ) {

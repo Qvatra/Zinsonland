@@ -1,5 +1,6 @@
 ﻿#pragma strict
 
+var anim : Animator;
 var health : int;
 var speed : float;
 var coeff : float;
@@ -13,19 +14,42 @@ private var time: float;
 private var closestEnemy : GameObject;
 private var eating: boolean;
 private var p01 : GameObject;
-
+private var direct: Vector2; //direction to target
+private var normal: Vector2; //normal to target
+private var moveTo: Vector2; //target coords
+private var alive: boolean = true;
 
 function Start () {
-	speed = speed/1000;
+	var scale: float = Random.Range(0.8, 1.2);
+	transform.localScale = Vector3(scale,scale,1);
+	speed = speed/100;
 	p01 = GameObject.Find("player01");
 	//fieldCanvasScript = GameObject.Find("FieldCanvas").GetComponent("fieldScript");
 	time = 0f;
+	anim.speed = 1f;
+	anim.SetInteger("action", 0);
 }
 
 function Update () {
-	var direct : Vector3 = (p01.transform.position - transform.position).normalized*coeff;
-	var normal : Vector3 = normV(closestEnemy).normalized;
-	transform.Translate((direct + normal).normalized*speed);
+	if(alive){ 
+	if (eating && anim.GetInteger("action") == 0){
+		anim.speed = 1.5f;
+		anim.SetInteger("action", 1);
+	}
+	if (!eating && anim.GetInteger("action") == 1){
+		anim.speed = 1f;
+		anim.SetInteger("action", 0);
+	}
+	
+
+	direct = (p01.transform.position - transform.position).normalized;
+	normal = normV(closestEnemy).normalized;
+	//transform.Translate((direct + normal).normalized*speed);
+	var direction: Vector2 = (direct + normal*coeff).normalized;
+	
+	transform.position.x += direction.x * speed * Time.deltaTime;
+	transform.position.y += direction.y * speed * Time.deltaTime;
+	transform.rotation = Quaternion.Euler(0, 0, angle());
 
 	time = time + Time.deltaTime;
 	if (scanTimeLowBound + Random.Range(0f,scanTimeFluctuation) < time) {
@@ -52,6 +76,13 @@ function Update () {
 			eating = false;
 		}
 	}
+	}
+}
+
+function angle(){
+	var ang = Vector2.Angle(direct, Vector2.right);
+	if(direct.y < 0)ang = -ang;
+	return ang;
 }
 
 function findClosestEnemy(){
@@ -79,7 +110,19 @@ function death(dir){
 	
 	_stat.enemiesKilled++;
 	_stat.cash++;
-	Destroy(gameObject);
+	
+	var dist: float = (p01.transform.position - transform.position).magnitude;
+	if(dist < 0.55){
+		anim.speed = 2f;
+		anim.SetInteger("action", 3);
+	} else {
+		anim.speed = 2f;
+		anim.SetInteger("action", 2);	
+	}
+	alive = false;
+	yield WaitForSeconds(1);
+	Destroy(GetComponent(Collider2D));
+	//Destroy(gameObject);
 }
 
 function normV(nearEnemy: GameObject) {

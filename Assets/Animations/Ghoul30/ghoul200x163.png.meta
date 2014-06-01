@@ -1,0 +1,373 @@
+fileFormatVersion: 2
+guid: ee438908bd18c1f458e0992b4f60860c
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: ghoul200x163_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 981
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 981
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 981
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 981
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 981
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 981
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 818
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_7
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 818
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_8
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 818
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_9
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 818
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_10
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 818
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 655
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_12
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 655
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 655
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_14
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 655
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_15
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 655
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_16
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 655
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 492
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_18
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 492
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_19
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 492
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_20
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 492
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_21
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 492
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_22
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 492
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 329
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_24
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 329
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_25
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 329
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_26
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 329
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_27
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 329
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 166
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_29
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 166
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_30
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 166
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_31
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 166
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_32
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 166
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_33
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 166
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: ghoul200x163_35
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 3
+        width: 200
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
