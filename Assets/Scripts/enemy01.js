@@ -17,10 +17,11 @@ private var p01 : GameObject;
 private var direct: Vector2; //direction to target
 private var normal: Vector2; //normal to target
 private var alive: boolean = true;
+private var weight: float;
 
 function Start () {
-	var scale: float = Random.Range(0.8, 1.2);
-	transform.localScale = Vector3(scale,scale,1);
+	weight = Random.Range(0.8, 1.2);
+	transform.localScale = Vector3(weight, weight, 1);
 	speed = speed/100;
 	p01 = GameObject.Find("player01");
 	//fieldCanvasScript = GameObject.Find("FieldCanvas").GetComponent("fieldScript");
@@ -31,6 +32,9 @@ function Start () {
 
 function Update () {
 	if(alive){ 
+	if(rigidbody2D.velocity != Vector2.zero) {
+		rigidbody2D.velocity = Vector2.zero;
+	}
 	if (eating && anim.GetInteger("action") == 0){
 		anim.speed = 1.5f;
 		anim.SetInteger("action", 1);
@@ -104,7 +108,10 @@ function death(dir){
 	transform.rotation = Quaternion.Euler(0, 0, angle(direct));
 	//var endpoint = fieldCanvasScript.point(p01.transform.position, transform.position, 0.2f);
 	//fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
-	Instantiate (blood01, transform.position, Quaternion.FromToRotation(Vector3.right,dir));
+	if(alive){ //enter this block only once
+		Instantiate (blood01, transform.position, Quaternion.FromToRotation(Vector3.right,dir));
+	}
+	alive = false;
     //var redValue = Random.Range(160, 240);
 	//fieldCanvasScript.drawBlood(-transform.position.x*100,-transform.position.y*100,ang, Color32(redValue,0,0,180));
 	
@@ -119,8 +126,10 @@ function death(dir){
 		anim.speed = 2f;
 		anim.SetInteger("action", 2);	
 	}
-	alive = false;
-	yield WaitForSeconds(1);
+
+	rigidbody2D.velocity = - 7 * direct / weight / weight / weight / weight / dist / dist / dist;
+	yield WaitForSeconds(0.2);
+	rigidbody2D.velocity = Vector2.zero;
 	Destroy(GetComponent(Collider2D));
 	transform.position.z = 0.5;
 	//Destroy(gameObject);
