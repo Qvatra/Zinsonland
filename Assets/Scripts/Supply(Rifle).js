@@ -20,3 +20,5 @@ function OnTriggerEnter2D (hitInfo : Collider2D) {
 		Destroy(gameObject);
 	}
 }
+
+

@@ -122,8 +122,9 @@ function shotDirection(){
 function createShot(weapon){
 	var shotClone: GameObject = Instantiate(shotPrefab);
 	var shotCloneScript = shotClone.GetComponent(shot);
+	var delta: float  = Random.Range(-0.05, 0.05);
 	shotCloneScript.shotDirection = direction;
-	shotCloneScript.startPosition = transform.position;
+	shotCloneScript.startPosition = transform.position + direction * delta;
 	shotCloneScript.weapon = weapon;
 }
 
@@ -142,7 +143,7 @@ function firing() {
 			_GM.weaponLoad--;
 		} else if(Input.GetButtonDown("Fire1") &&_GM.weapon == 'Shotgun'){
 			nextFire = Time.time + 1.5;
-			for(var i = 0; i < 9; i++){
+			for(var i = 0; i < 8; i++){
 				createShot(_GM.weapon);
 			}
 			audio.PlayOneShot(audioShotgun, 0.3);

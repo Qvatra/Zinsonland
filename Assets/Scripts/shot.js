@@ -34,6 +34,7 @@ function Start () {
 }
 
 function Update(){
+/*
 	//deletes shot after 0.05 sec if it slows down
 	if(toDelTime==0f && rigidbody2D.velocity.magnitude < velocity) {
 		toDelTime = Time.time;
@@ -43,6 +44,10 @@ function Update(){
 		Destroy(gameObject);
 	}
 	//eos
+*/	
+	if(Mathf.Abs(transform.position.x)>5 || Mathf.Abs(transform.position.y)>5){
+		Destroy(gameObject);
+	}
 	
 	//deletes shot trace after x seconds
 	if(Time.time - time > 0.02){
@@ -50,27 +55,8 @@ function Update(){
 	}
 }
 
-/*
-function angle(){
-	var ang;
-	if(direction.y >= 0){
-		ang = 180 + Vector2.Angle(direction, Vector2.right);
-	} else {
-		ang = 180 - Vector2.Angle(direction, Vector2.right);
-	}
-	return ang;
-}
-*/
-
 //used in enemy to draw blood splatter
 function bulletDirection(){
 	var dir: Vector3 = Vector3(direction.x,direction.y);
 	return dir;
-}
-
-//destruction of a shot is also in Enemy script to make both Destructions syncronized
-function OnCollisionEnter2D (hitInfo : Collision2D) { 
-	if (hitInfo.collider.name == "_Box") {
-		Destroy(gameObject);
-	}
 }

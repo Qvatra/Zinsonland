@@ -36,7 +36,7 @@ function Update () {
 		rigidbody2D.velocity = Vector2.zero;
 	}
 	if (eating && anim.GetInteger("action") == 0){
-		anim.speed = 1.5f;
+		anim.speed = 1.8f;
 		anim.SetInteger("action", 1);
 	}
 	if (!eating && anim.GetInteger("action") == 1){
@@ -47,12 +47,17 @@ function Update () {
 
 	direct = (p01.transform.position - transform.position).normalized;
 	normal = normV(closestEnemy).normalized;
-	//transform.Translate((direct + normal).normalized*speed);
+
 	var direction: Vector2 = (direct + normal*coeff).normalized;
 	
-	transform.position.x += direction.x * speed * Time.deltaTime;
-	transform.position.y += direction.y * speed * Time.deltaTime;
-	transform.rotation = Quaternion.Euler(0, 0, angle(direct + normal*coeff));
+	if(!eating){
+		transform.position.x += direction.x * speed * Time.deltaTime;
+		transform.position.y += direction.y * speed * Time.deltaTime;
+		transform.rotation = Quaternion.Euler(0, 0, angle(direct + normal*coeff));
+	} else {
+		transform.rotation = Quaternion.Euler(0, 0, angle(direct));
+	}
+	
 
 	time = time + Time.deltaTime;
 	if (scanTimeLowBound + Random.Range(0f,scanTimeFluctuation) < time) {
@@ -108,31 +113,29 @@ function death(dir){
 	transform.rotation = Quaternion.Euler(0, 0, angle(direct));
 	//var endpoint = fieldCanvasScript.point(p01.transform.position, transform.position, 0.2f);
 	//fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
-	if(alive){ //enter this block only once
-		Instantiate (blood01, transform.position, Quaternion.FromToRotation(Vector3.right,dir));
-	}
-	alive = false;
+	Instantiate (blood01, transform.position, Quaternion.FromToRotation(Vector3.right,dir));
     //var redValue = Random.Range(160, 240);
 	//fieldCanvasScript.drawBlood(-transform.position.x*100,-transform.position.y*100,ang, Color32(redValue,0,0,180));
 	
 	_stat.enemiesKilled++;
 	_stat.cash++;
 	
-	var dist: float = (p01.transform.position - transform.position).magnitude;
-	if(dist < 0.55){
+	var playerPos : Vector2 = p01.transform.position;
+	var enemyPos : Vector2 = transform.position;
+	
+	var dist: float = (enemyPos - playerPos).magnitude;
+	if(dist < 0.5){
 		anim.speed = 2.2f;
 		anim.SetInteger("action", 3);
 	} else {
 		anim.speed = 2f;
-		anim.SetInteger("action", 2);	
+		anim.SetInteger("action", 2);
 	}
-
-	rigidbody2D.velocity = - 7 * direct / weight / weight / weight / weight / dist / dist / dist;
+	rigidbody2D.velocity = - direct / weight / weight / weight / dist / dist / dist;
 	yield WaitForSeconds(0.2);
 	rigidbody2D.velocity = Vector2.zero;
 	Destroy(GetComponent(Collider2D));
 	transform.position.z = 0.5;
-	//Destroy(gameObject);
 }
 
 function normV(nearEnemy: GameObject) {
@@ -152,14 +155,16 @@ function normV(nearEnemy: GameObject) {
 }
 
 function OnTriggerEnter2D (hitInfo : Collider2D) {
-	if (hitInfo.name == "shot(Clone)"){
+	if (hitInfo.name == "shot(Clone)" && alive){
 		var obj = hitInfo.gameObject;
 		var script = obj.GetComponent(shot);
 		var dir = script.bulletDirection();
 		Destroy(hitInfo.gameObject);
 		health--;
 		if (health <= 0) death(dir);
-	} else if (hitInfo.name == "player01") {
+		alive = false;
+	} 
+	if (hitInfo.name == "player01") {
 		eating = true;
 	}
 }
