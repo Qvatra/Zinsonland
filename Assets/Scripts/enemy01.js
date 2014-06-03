@@ -8,6 +8,9 @@ var scanTimeLowBound : float;
 var scanTimeFluctuation: float;
 var sightDist : float;
 var blood01 : GameObject;
+var audioAttack: AudioClip;
+private var playAttack: boolean = true;
+var audioDeath: AudioClip;
 
 //private var fieldCanvasScript : fieldScript;
 private var time: float;
@@ -21,6 +24,7 @@ private var weight: float;
 
 function Start () {
 	weight = Random.Range(0.8, 1.2);
+	audio.pitch = 1.4 - (weight - 0.8) * 1.25 ;
 	transform.localScale = Vector3(weight, weight, 1);
 	speed = speed/100;
 	p01 = GameObject.Find("player01");
@@ -110,6 +114,7 @@ function findClosestEnemy(){
 }
 
 function death(dir){
+	audio.PlayOneShot(audioDeath, 0.7);
 	transform.rotation = Quaternion.Euler(0, 0, angle(direct));
 	//var endpoint = fieldCanvasScript.point(p01.transform.position, transform.position, 0.2f);
 	//fieldCanvasScript.drawLine(transform.position.x*100,transform.position.y*100,endpoint.x*100,endpoint.y*100,Color.red);
@@ -124,14 +129,14 @@ function death(dir){
 	var enemyPos : Vector2 = transform.position;
 	
 	var dist: float = (enemyPos - playerPos).magnitude;
-	if(dist < 0.5){
-		anim.speed = 2.2f;
+	if(dist < 0.6){
+		anim.speed = 2f;
 		anim.SetInteger("action", 3);
 	} else {
 		anim.speed = 2f;
 		anim.SetInteger("action", 2);
 	}
-	rigidbody2D.velocity = - direct / weight / weight / weight / dist / dist / dist;
+	rigidbody2D.velocity = - direct / weight / weight / weight / dist / dist;
 	yield WaitForSeconds(0.2);
 	rigidbody2D.velocity = Vector2.zero;
 	Destroy(GetComponent(Collider2D));
@@ -154,8 +159,8 @@ function normV(nearEnemy: GameObject) {
 	return normal;
 }
 
-function OnTriggerEnter2D (hitInfo : Collider2D) {
-	if (hitInfo.name == "shot(Clone)" && alive){
+function OnCollisionEnter2D(hitInfo : Collision2D){
+	if (hitInfo.gameObject.name == "shot(Clone)" && alive){
 		var obj = hitInfo.gameObject;
 		var script = obj.GetComponent(shot);
 		var dir = script.bulletDirection();
@@ -164,8 +169,22 @@ function OnTriggerEnter2D (hitInfo : Collider2D) {
 		if (health <= 0) death(dir);
 		alive = false;
 	} 
+}
+
+function OnTriggerEnter2D (hitInfo : Collider2D) {
 	if (hitInfo.name == "player01") {
 		eating = true;
+	}
+}
+
+function OnTriggerStay2D (hitInfo : Collider2D) {
+	if (hitInfo.name == "player01") {
+		if(alive && eating && playAttack){
+			playAttack = false;
+			audio.PlayOneShot(audioAttack, 0.6);
+			yield WaitForSeconds(1.3);
+			playAttack = true;
+		}
 	}
 }
 

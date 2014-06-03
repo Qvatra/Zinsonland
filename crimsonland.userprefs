@@ -1,14 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\enemy01.js">
     <Files>
-      <File FileName="Assets\Scripts\enemy01.js" Line="134" Column="75" />
-      <File FileName="Assets\Scripts\player01.js" Line="147" Column="28" />
+      <File FileName="Assets\Scripts\player01.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\soldier01script.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\_GM.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\aim01.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\shot.js" Line="47" Column="3" />
-      <File FileName="Assets\Scripts\Supply(Rifle).js" Line="11" Column="1" />
+      <File FileName="Assets\Scripts\shot.js" Line="43" Column="5" />
+      <File FileName="Assets\Scripts\Supply(Rifle).js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\enemy01.js" Line="132" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

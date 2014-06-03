@@ -34,17 +34,16 @@ function Start () {
 }
 
 function Update(){
-/*
-	//deletes shot after 0.05 sec if it slows down
-	if(toDelTime==0f && rigidbody2D.velocity.magnitude < velocity) {
+	if(toDelTime!=0f && Time.time - toDelTime > 0.05){
+		//Debug.Log('destroyed');
+		Destroy(gameObject);
+	}
+
+	if(toDelTime==0f && rigidbody2D.velocity.normalized != direction) {
+		//Debug.Log('direction changed');
 		toDelTime = Time.time;
 	}
 	
-	if(toDelTime!=0f && Time.time - toDelTime > 0.05){
-		Destroy(gameObject);
-	}
-	//eos
-*/	
 	if(Mathf.Abs(transform.position.x)>5 || Mathf.Abs(transform.position.y)>5){
 		Destroy(gameObject);
 	}
