@@ -100,7 +100,7 @@ function Update () {
 }
 
 function death(){
-	audio.PlayOneShot(audioDeath, 0.5);
+	audio.PlayOneShot(audioDeath, 0.4);
 	alive = false;
 	anim.speed = 1f;
 	anim.SetInteger("action", 0);
@@ -134,24 +134,24 @@ function firing() {
 		if(Input.GetButtonDown("Fire1") && _GM.weapon == 'Pistol'){
 			nextFire = Time.time + 0.7;
 			createShot(_GM.weapon);
-	    	audio.PlayOneShot(audioPistol, 0.3);
+	    	audio.PlayOneShot(audioPistol, 0.1);
 	    	_GM.weaponLoad--;
 		} else if(Input.GetButton("Fire1") && _GM.weapon == 'Assault_rifle'){
 			nextFire = Time.time + 0.17;
 			createShot(_GM.weapon);
-			audio.PlayOneShot(audioAssault_rifle, 0.8);
+			audio.PlayOneShot(audioAssault_rifle, 0.4);
 			_GM.weaponLoad--;
 		} else if(Input.GetButtonDown("Fire1") &&_GM.weapon == 'Shotgun'){
 			nextFire = Time.time + 1.5;
 			for(var i = 0; i < 8; i++){
 				createShot(_GM.weapon);
 			}
-			audio.PlayOneShot(audioShotgun, 0.3);
+			audio.PlayOneShot(audioShotgun, 0.4);
 			_GM.weaponLoad--;
 			
 			if(_GM.weaponLoad > 0) {
 				yield WaitForSeconds(0.2);
-				audio.PlayOneShot(audioReloadShotgun3, 0.3);
+				audio.PlayOneShot(audioReloadShotgun3, 0.2);
 				yield WaitForSeconds(0.1);
 				state = 'reload_shot';
 				anim.speed = 0.7f;
@@ -168,12 +168,12 @@ function reloadWeapon() {
 			anim.SetInteger("action", 12);
 			anim.speed = 0.6f;
 			yield WaitForSeconds(0.3);
-			audio.PlayOneShot(audioReloadPistol, 0.6);
+			audio.PlayOneShot(audioReloadPistol, 0.5);
 
 		} else if(_GM.weapon == 'Assault_rifle'){
 			nextFire = Time.time + 3;
 			_GM.weaponLoad = 30;
-			audio.PlayOneShot(audioReloadAssault_rifle, 0.3);
+			audio.PlayOneShot(audioReloadAssault_rifle, 0.2);
 			yield WaitForSeconds(0.5);
 			anim.SetInteger("action", 22);
 			anim.speed = 0.6f;
@@ -183,12 +183,12 @@ function reloadWeapon() {
 			yield WaitForSeconds(0.5);
 			anim.SetInteger("action", 32);
 			anim.speed = 2.8f;
-			audio.PlayOneShot(audioReloadShotgun, 0.3);
-			yield WaitForSeconds(1);
 			audio.PlayOneShot(audioReloadShotgun, 0.2);
+			yield WaitForSeconds(1);
+			audio.PlayOneShot(audioReloadShotgun, 0.1);
 			yield WaitForSeconds(1);
 			anim.speed = 0.7f;
 			yield WaitForSeconds(0.3);
-			audio.PlayOneShot(audioReloadShotgun2, 0.5);
+			audio.PlayOneShot(audioReloadShotgun2, 0.4);
 		}
 }

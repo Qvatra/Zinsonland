@@ -8,6 +8,8 @@ var scanTimeLowBound : float;
 var scanTimeFluctuation: float;
 var sightDist : float;
 var blood01 : GameObject;
+
+var audioHit: AudioClip;
 var audioAttack: AudioClip;
 private var playAttack: boolean = true;
 var audioDeath: AudioClip;
@@ -24,9 +26,9 @@ private var weight: float;
 
 function Start () {
 	weight = Random.Range(0.8, 1.2);
-	audio.pitch = 1.4 - (weight - 0.8) * 1.25 ;
+	audio.pitch = 1.4 - (weight - 0.8) * 1.25;
+	speed = speed /100 / weight / weight;
 	transform.localScale = Vector3(weight, weight, 1);
-	speed = speed/100;
 	p01 = GameObject.Find("player01");
 	//fieldCanvasScript = GameObject.Find("FieldCanvas").GetComponent("fieldScript");
 	time = 0f;
@@ -47,7 +49,6 @@ function Update () {
 		anim.speed = 1f;
 		anim.SetInteger("action", 0);
 	}
-	
 
 	direct = (p01.transform.position - transform.position).normalized;
 	normal = normV(closestEnemy).normalized;
@@ -141,6 +142,7 @@ function death(dir){
 	rigidbody2D.velocity = Vector2.zero;
 	Destroy(GetComponent(Collider2D));
 	transform.position.z = 0.5;
+	anim.StopPlayback();
 }
 
 function normV(nearEnemy: GameObject) {
@@ -164,10 +166,14 @@ function OnCollisionEnter2D(hitInfo : Collision2D){
 		var obj = hitInfo.gameObject;
 		var script = obj.GetComponent(shot);
 		var dir = script.bulletDirection();
+		audio.PlayOneShot(audioHit, 0.7);
+		Instantiate (blood01, transform.position, Quaternion.FromToRotation(Vector3.right,dir));
 		Destroy(hitInfo.gameObject);
 		health--;
-		if (health <= 0) death(dir);
-		alive = false;
+		if (health <= 0) {
+			death(dir);
+			alive = false;
+		}
 	} 
 }
 
@@ -181,7 +187,7 @@ function OnTriggerStay2D (hitInfo : Collider2D) {
 	if (hitInfo.name == "player01") {
 		if(alive && eating && playAttack){
 			playAttack = false;
-			audio.PlayOneShot(audioAttack, 0.6);
+			audio.PlayOneShot(audioAttack, 0.5);
 			yield WaitForSeconds(1.3);
 			playAttack = true;
 		}
