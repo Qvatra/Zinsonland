@@ -2,6 +2,7 @@
 
 static var gameRunning: boolean;
 static var livesLeft: float;
+static var ammoLeft: int;
 static var shotsFired: int;
 static var towerFired: int;
 static var enemiesKilled: int;

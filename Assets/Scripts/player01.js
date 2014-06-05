@@ -45,7 +45,7 @@ function Update () {
 			soldier01.SendMessage("setDestination",cam.ScreenToWorldPoint(Input.mousePosition));
 		}
 		
-		if(_GM.weaponLoad > 0){
+		if(_stat.ammoLeft > 0){
 			if(Time.time > nextFire) firing();
 		} else if(state != 'reload' && state != 'reload_shot') {
 			reloadWeapon();
@@ -135,21 +135,21 @@ function firing() {
 			nextFire = Time.time + 0.7;
 			createShot(_GM.weapon);
 	    	audio.PlayOneShot(audioPistol, 0.1);
-	    	_GM.weaponLoad--;
+	    	_stat.ammoLeft--;
 		} else if(Input.GetButton("Fire1") && _GM.weapon == 'Assault_rifle'){
 			nextFire = Time.time + 0.17;
 			createShot(_GM.weapon);
 			audio.PlayOneShot(audioAssault_rifle, 0.4);
-			_GM.weaponLoad--;
+			_stat.ammoLeft--;
 		} else if(Input.GetButtonDown("Fire1") &&_GM.weapon == 'Shotgun'){
 			nextFire = Time.time + 1.5;
 			for(var i = 0; i < 8; i++){
 				createShot(_GM.weapon);
 			}
 			audio.PlayOneShot(audioShotgun, 0.4);
-			_GM.weaponLoad--;
+			_stat.ammoLeft--;
 			
-			if(_GM.weaponLoad > 0) {
+			if(_stat.ammoLeft > 0) {
 				yield WaitForSeconds(0.2);
 				audio.PlayOneShot(audioReloadShotgun3, 0.2);
 				yield WaitForSeconds(0.1);
@@ -164,7 +164,7 @@ function reloadWeapon() {
 		state = 'reload';
 		if(_GM.weapon == 'Pistol'){
 			nextFire = Time.time + 1.5;
-			_GM.weaponLoad = 5;
+			_stat.ammoLeft = 5;
 			anim.SetInteger("action", 12);
 			anim.speed = 0.6f;
 			yield WaitForSeconds(0.3);
@@ -172,14 +172,14 @@ function reloadWeapon() {
 
 		} else if(_GM.weapon == 'Assault_rifle'){
 			nextFire = Time.time + 3;
-			_GM.weaponLoad = 30;
+			_stat.ammoLeft = 30;
 			audio.PlayOneShot(audioReloadAssault_rifle, 0.2);
 			yield WaitForSeconds(0.5);
 			anim.SetInteger("action", 22);
 			anim.speed = 0.6f;
 		} else if(_GM.weapon == 'Shotgun'){
 			nextFire = Time.time + 3.6;
-			_GM.weaponLoad = 8;
+			_stat.ammoLeft = 8;
 			yield WaitForSeconds(0.5);
 			anim.SetInteger("action", 32);
 			anim.speed = 2.8f;

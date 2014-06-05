@@ -13,7 +13,7 @@ function OnTriggerEnter2D (hitInfo : Collider2D) {
 		if(hitInfo.gameObject.GetComponent(player01).state == 'reload') return;
 		toDel = true;
 		_GM.weapon = 'Assault_rifle';
-		_GM.weaponLoad = 30;
+		_stat.ammoLeft = 30;
 		audio.PlayOneShot(audioPick, 0.5);
 		
 		yield WaitForSeconds(0.5);

@@ -7,11 +7,10 @@ static var aimDist : float = 0.5f;
 static var shotDist : int = 2.5f;
 static var shotAppearDist : float = 0.21f;
 static var weapon : String = 'Pistol'; //'Shotgun';//'Assault_rifle';
-static var weaponLoad : int = 5;
 private var time : String;
 private var enemies : String;
-private var shots : String;
-private var lives : String;
+private var shots : String; //gui string
+private var lives : String; //gui string
 private var statusBar: GameObject;
 private var i : int;
 
@@ -24,7 +23,9 @@ var prefabBonus11 : GameObject;
 
 function Start () {
 	_stat.reset();
+	_stat.ammoLeft = 5;
 	statusBar = GameObject.Find("_StatText");
+	
 	
 
 //	for(i = 0; i < boxNum; i++){
@@ -45,6 +46,8 @@ function Start () {
 }
 
 function startLevel(){
+	_stat.gameRunning = true;
+
 	 for(obj in GameObject.FindGameObjectsWithTag("bonus")) {
 	 	obj.rigidbody2D.isKinematic = false;
 	 }
