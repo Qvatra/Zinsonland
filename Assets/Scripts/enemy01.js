@@ -8,12 +8,13 @@ var scanTimeLowBound : float;
 var scanTimeFluctuation: float;
 var sightDist : float;
 var blood01 : GameObject;
-
+var attackDistance : float = 2;
+var attackSpeed : float = 2;
 var audioHit: AudioClip;
 var audioAttack: AudioClip;
 private var playAttack: boolean = true;
 var audioDeath: AudioClip;
-
+private var nextScan : float = 0.1f;
 //private var fieldCanvasScript : fieldScript;
 private var time: float;
 private var closestEnemy : GameObject;
@@ -38,6 +39,7 @@ function Start () {
 
 function Update () {
 	if(alive){ 
+	
 	if(rigidbody2D.velocity != Vector2.zero) {
 		rigidbody2D.velocity = Vector2.zero;
 	}
@@ -52,13 +54,20 @@ function Update () {
 
 	direct = (p01.transform.position - transform.position).normalized;
 	normal = normV(closestEnemy).normalized;
-
+	var distance = (p01.transform.position - transform.position).magnitude;
 	var direction: Vector2 = (direct + normal*coeff).normalized;
 	
 	if(!eating){
-		transform.position.x += direction.x * speed * Time.deltaTime;
-		transform.position.y += direction.y * speed * Time.deltaTime;
-		transform.rotation = Quaternion.Euler(0, 0, angle(direct + normal*coeff));
+		if (distance>attackDistance) {
+			transform.position.x += direction.x * speed * Time.deltaTime;
+			transform.position.y += direction.y * speed * Time.deltaTime;
+			transform.rotation = Quaternion.Euler(0, 0, angle(direct + normal*coeff));
+		} else {
+			transform.position.x += direct.x * speed * attackSpeed * Time.deltaTime;
+			transform.position.y += direct.y * speed * attackSpeed * Time.deltaTime;
+			transform.rotation = Quaternion.Euler(0, 0, angle(direct));
+			anim.speed = 1f*attackSpeed;
+		}
 	} else {
 		transform.rotation = Quaternion.Euler(0, 0, angle(direct));
 	}
@@ -66,6 +75,9 @@ function Update () {
 
 	time = time + Time.deltaTime;
 	if (scanTimeLowBound + Random.Range(0f,scanTimeFluctuation) < time) {
+		if(!eating) {
+			p01 = findClosestPlayer();
+		}
 		var tmp = findClosestEnemy();
 		if(tmp != null){
 			var diff = transform.position - tmp.transform.position;
@@ -81,13 +93,10 @@ function Update () {
 		time = 0f;
 	}
 	
-	if(eating && _stat.livesLeft > 0){
-		_stat.livesLeft -= Time.deltaTime;
+	if(eating){
+		p01.SendMessage("damage",Time.deltaTime);
 							
-		if(_stat.livesLeft < 0) {
-			_stat.livesLeft = 0f;
-			eating = false;
-		}
+		
 	}
 	}
 }
@@ -104,12 +113,15 @@ function findClosestEnemy(){
      var obj : GameObject;
 
 	 for(obj in GameObject.FindGameObjectsWithTag("Enemy")) {
+	 var enemy = obj.GetComponent(enemy01);
+	 if (enemy.isAlive() == true) {
 		var diff = obj.transform.position - transform.position;
      	var curDistance = diff.sqrMagnitude;
       	if (curDistance < distance && curDistance != 0) {
         	closestEnemy = obj;
         	distance = curDistance;
       	}
+	 }
 	 }
      return closestEnemy;
 }
@@ -178,13 +190,13 @@ function OnCollisionEnter2D(hitInfo : Collision2D){
 }
 
 function OnTriggerEnter2D (hitInfo : Collider2D) {
-	if (hitInfo.name == "player01") {
+	if (hitInfo.tag == "player01") {
 		eating = true;
 	}
 }
 
 function OnTriggerStay2D (hitInfo : Collider2D) {
-	if (hitInfo.name == "player01") {
+	if (hitInfo.tag == "player01") {
 		if(alive && eating && playAttack){
 			playAttack = false;
 			audio.PlayOneShot(audioAttack, 0.5);
@@ -195,7 +207,36 @@ function OnTriggerStay2D (hitInfo : Collider2D) {
 }
 
 function OnTriggerExit2D (hitInfo : Collider2D) {
-	if (hitInfo.name == "player01") {
+	if (hitInfo.tag == "player01") {
 		eating = false;
 	}
+}
+function isAlive() {
+	return alive;
+}
+
+function findClosestPlayer() {
+	var distance = Mathf.Infinity;
+     var closestPlayer : GameObject = null;
+     var obj : GameObject;
+		var alive = false; 
+	 for(obj in GameObject.FindGameObjectsWithTag("player01")) {
+	 
+	 if (obj.GetComponent(player01) == null) {
+	 	var pl = obj.GetComponent(soldier01script);
+	 	alive = pl.isAlive();
+	 } else {
+	 	var sl = obj.GetComponent(player01);
+	 	alive = sl.isAlive();
+	 }
+	 if (alive) {
+		var diff = obj.transform.position - transform.position;
+     	var curDistance = diff.sqrMagnitude;
+      	if (curDistance < distance && curDistance != 0) {
+        	closestPlayer = obj;
+        	distance = curDistance;
+      	}
+	 }
+	 }
+     return closestPlayer;
 }

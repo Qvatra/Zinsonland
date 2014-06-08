@@ -3,19 +3,23 @@
 	var anim : Animator;
 	var feetAnim : Animator;
 	var shotPrefab : GameObject;
-	var health : int;
+	var health : float;
 	var livesLeft : float;
 	var moveTo : Vector2;
 	var shootTo : Vector2;
+	var speed : float = 1f;
 	var destinationX : float;
 	var destinationY : float;
 	var velosity : float = 0.4f;
 	var accuracy : float = 0.1f;
 	var currentEnemy : GameObject;
+	var audioDeath: AudioClip;
 	private var nextFire : float = 0.1f;
-        private var nextScan : float = 0.1f;
-	var defendRadius : float = 1.0f; 
-        var dangerRadius : float = 1.0f; 
+    private var nextScan : float = 0.1f;
+    private var nextAiming : float = 0.1f;
+	var defendRadius : float = 0.3f; 
+    var dangerRadius : float = 1.0f; 
+    private var alive: boolean = true;
 function Start () {
 	livesLeft = health;
 	destinationX = -2;
@@ -23,61 +27,88 @@ function Start () {
 }
 
 function Update () {
-
+if (health > 0){
         if (Time.time > nextScan) {
              scanTerritory();
-             nextScan = Time.time + 0.1;
+             nextScan = Time.time + 1;
         }
-        
-	moveTo = getMoveDirection();
-	shootTo = getShootDirection();
+        if (Time.time > nextAiming) {
+			getMoveDirection();
+			getShootDirection();
+			nextAiming = Time.time + 0.2;
+        }
+	
 
-
-moving();
-firing();
+		moving();
+		firing();
+} else {
+		if(alive)soldDeath();
+	}
 }
 
+function soldDeath(){
+	//audio.PlayOneShot(audioDeath, 0.4);
+	Debug.Log("die");
+	alive = false;
+	anim.speed = 1f;
+	anim.SetInteger("action", 0);
+	feetAnim.SetBool("walk", false);
+	yield WaitForSeconds(1);
+	Destroy(GetComponent(Collider2D));
+}
 function getMoveDirection() {
 var vektor :Vector2;
+var enemyDistance = Vector2(0,0);
 var flagDistance = Vector2(destinationX-transform.position.x, destinationY-transform.position.y);
 if (currentEnemy != null) {
-var enemyDistance = Vector2(currentEnemy.transform.position.x-transform.position.x, currentEnemy.transform.position.y-transform.position.y);
+enemyDistance = Vector2(currentEnemy.transform.position.x-transform.position.x, currentEnemy.transform.position.y-transform.position.y);
 }
 
 if ((currentEnemy == null) || (enemyDistance.magnitude>dangerRadius*5)) {
- vektor = flagDistance.normalized;
+	if (flagDistance.magnitude > 0.1f) {
+ 		vektor = flagDistance.normalized;
+ 		speed = 1f;
+ 	} else {
+ 		vektor = Vector2(0,0);
+ 		speed = 1f;
+ 	}
 } else {
 if (flagDistance.magnitude < defendRadius) {
   if (enemyDistance.magnitude > (dangerRadius*2)) {
         vektor = enemyDistance.normalized;
-      
+      	speed = 0.2;
   } else { 
       if (enemyDistance.magnitude < dangerRadius) {
         vektor = -enemyDistance.normalized;
+        speed = 1f;
       } else {
-        vektor = enemyDistance.normalized*(enemyDistance.magnitude-dangerRadius*1.5)*2/dangerRadius;
+        vektor = enemyDistance.normalized;
+        speed = 2*enemyDistance.magnitude/dangerRadius - 3;
       }
   }
 } else {
     if (enemyDistance.magnitude > (dangerRadius*2)) {
       vektor = flagDistance.normalized;
+      speed = 1f;
   } else { 
       if (enemyDistance.magnitude < dangerRadius) {
-        vektor = (0.75*enemyDistance.normalized/dangerRadius+0.25*flagDistance.normalized).normalized;
+        vektor = (-3*enemyDistance.normalized+flagDistance.normalized).normalized;
+        speed = 1f;
       } else {
-        vektor = (0.25*enemyDistance.normalized/dangerRadius+0.75*flagDistance.normalized).normalized;
+        vektor = (-enemyDistance.normalized+3*flagDistance.normalized).normalized;
+        speed = 1f;
       }
 }
+}    
 }
-          if (vektor.magnitude > 1) {
+if (vektor.magnitude > 1) {
 		Debug.Log("incorrect soldier AI, "+vektor);
 	 } else {
                 if (vektor.magnitude < 0.01) {
 		  vektor=Vector2.zero;
 	        }
            }
-}
-return vektor;
+moveTo = vektor;
 }
 
 function angle(dir: Vector2){
@@ -90,9 +121,9 @@ function getShootDirection() {
 	var enemy = currentEnemy;
 	if (enemy!=null) {
 		var vek = Vector2(enemy.transform.position.x - transform.position.x + Random.Range(-accuracy, accuracy), enemy.transform.position.y - transform.position.y + Random.Range(-accuracy, accuracy));
-		return vek.normalized;
+		shootTo = vek.normalized;
 	} else {
-		return Vector2.zero;
+		shootTo = Vector2.zero;
 	}
 }
 
@@ -108,11 +139,14 @@ function findClosestEnemy(){
      var obj : GameObject;
 
 	 for(obj in GameObject.FindGameObjectsWithTag("Enemy")) {
-		var diff = obj.transform.position - transform.position;
-     	var curDistance = diff.sqrMagnitude;
-      	if (curDistance < distance && curDistance != 0) {
-        	closestEnemy = obj;
-        	distance = curDistance;
+	 var enemy = obj.GetComponent(enemy01);
+	 	if (enemy.isAlive() == true) {
+			var diff = obj.transform.position - transform.position;
+     		var curDistance = diff.sqrMagnitude;
+      		if (curDistance < distance && curDistance != 0) {
+        		closestEnemy = obj;
+        		distance = curDistance;
+      		}
       	}
 	 }
      return closestEnemy;
@@ -128,7 +162,6 @@ function createShot(weapon){
 
 function firing() {
 	if(Time.time > nextFire && shootTo != Vector2.zero) {
-			Debug.Log("soldier firing");
 			nextFire = Time.time + 0.7;
 			createShot('Pistol');
 	}
@@ -137,9 +170,21 @@ function scanTerritory() {
            currentEnemy = findClosestEnemy();
 }
 function moving() {
-    transform.position.x += moveTo.x * velosity * Time.deltaTime;
-	transform.position.y += moveTo.y* velosity * Time.deltaTime;
-	transform.rotation = Quaternion.Euler(0, 0, angle(shootTo));
+	if (speed > 1) {
+		speed = 1;
+	}
+	if (Vector2(moveTo.x - transform.position.x,moveTo.y - transform.position.y).magnitude> (velosity * Time.deltaTime * 10)) {
+    transform.position.x += moveTo.x * velosity * speed * Time.deltaTime;
+	transform.position.y += moveTo.y * velosity * speed * Time.deltaTime;
+	}
+	
+	if (currentEnemy != null) {
+			transform.rotation = Quaternion.Euler(0, 0, angle(shootTo));
+		} else {
+			transform.rotation = Quaternion.Euler(0, 0, angle(moveTo));
+		}
+		
+		
         if  (moveTo != Vector2.zero ) {
 			anim.speed = 1f;
 			anim.SetInteger("action", 11);
@@ -150,5 +195,12 @@ function moving() {
 			feetAnim.SetBool("walk", false);
 		}
          
-	
+}
+
+function damage(dmg : float) {
+	health -= dmg;
+}
+
+function isAlive() {
+	return alive;
 }

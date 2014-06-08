@@ -5,7 +5,7 @@ var feetAnim : Animator;
 var shotPrefab : GameObject;
 var aim01 : Transform;
 static var aimPos : Vector3;
-var health : int;
+var health : float;
 var cam : Camera;
 var audioPistol: AudioClip;
 var audioAssault_rifle: AudioClip;
@@ -28,12 +28,11 @@ private var mouse : Vector2;
 
 function Start () {
 	localScaleX = transform.localScale.x;
-	_stat.livesLeft = health;
 	soldier01 = GameObject.Find("soldier01");
 }
 
 function Update () {
-	if (_stat.livesLeft > 0){
+	if (health > 0){
 		mouse = cam.ScreenToWorldPoint(Input.mousePosition);
 		direction.x = mouse.x - transform.position.x;
 		direction.y = mouse.y - transform.position.y;
@@ -100,6 +99,7 @@ function Update () {
 }
 
 function death(){
+Debug.Log("death");
 	audio.PlayOneShot(audioDeath, 0.4);
 	alive = false;
 	anim.speed = 1f;
@@ -191,4 +191,11 @@ function reloadWeapon() {
 			yield WaitForSeconds(0.3);
 			audio.PlayOneShot(audioReloadShotgun2, 0.4);
 		}
+}
+function damage(dmg : float) {
+	health -= dmg;
+}
+
+function isAlive() {
+	return alive;
 }
