@@ -70,26 +70,62 @@ function Update () {
 			state = 'walk';
 			if(_GM.weapon == 'Pistol'){
 				anim.speed = 1f;
-				anim.SetInteger("action", 11);
+				anim.SetInteger("action", 1);
 			} else if(_GM.weapon == 'Assault_rifle'){
 				anim.speed = 1f;
-				anim.SetInteger("action", 21);
+				anim.SetInteger("action", 5);
 			} else if(_GM.weapon == 'Shotgun'){
 				anim.speed = 1f;
-				anim.SetInteger("action", 31);
+				anim.SetInteger("action", 4);
+			} else if(_GM.weapon == 'MachineGun'){
+				anim.speed = 1f;
+				anim.SetInteger("action", 6);
+			} else if(_GM.weapon == 'Sniper'){
+				anim.speed = 1f;
+				anim.SetInteger("action", 3);
+			} else if(_GM.weapon == 'Uzi'){
+				anim.speed = 1f;
+				anim.SetInteger("action", 2);
+			} else if(_GM.weapon == 'RPG'){
+				anim.speed = 1f;
+				anim.SetInteger("action", 7);
+			} else if(_GM.weapon == 'Granade'){
+				anim.speed = 1f;
+				anim.SetInteger("action", 8);
+			} else if(_GM.weapon == 'Mine'){
+				anim.speed = 1f;
+				anim.SetInteger("action", 9);
 			}
 
 		} else if (!moving && state != 'stand' && state != 'reload' && state != 'reload_shot') {
 			state = 'stand';
 			if(_GM.weapon == 'Pistol'){
 				anim.speed = 0.4f;
-				anim.SetInteger("action", 11);
+				anim.SetInteger("action", 1);
 			} else if(_GM.weapon == 'Assault_rifle'){
 				anim.speed = 0.4f;
-				anim.SetInteger("action", 21);
+				anim.SetInteger("action", 5);
 			} else if(_GM.weapon == 'Shotgun'){
 				anim.speed = 0.4f;
-				anim.SetInteger("action", 31);
+				anim.SetInteger("action", 4);
+			} else if(_GM.weapon == 'MachineGun'){
+				anim.speed = 0.4f;
+				anim.SetInteger("action", 6);
+			} else if(_GM.weapon == 'Sniper'){
+				anim.speed = 0.4f;
+				anim.SetInteger("action", 3);
+			} else if(_GM.weapon == 'Uzi'){
+				anim.speed = 0.4f;
+				anim.SetInteger("action", 2);
+			} else if(_GM.weapon == 'RPG'){
+				anim.speed = 0.4f;
+				anim.SetInteger("action", 7);
+			} else if(_GM.weapon == 'Granade'){
+				anim.speed = 0.4f;
+				anim.SetInteger("action", 8);
+			} else if(_GM.weapon == 'Mine'){
+				anim.speed = 0.4f;
+				anim.SetInteger("action", 9);
 			}
 		}
 		
@@ -155,7 +191,7 @@ function firing() {
 				yield WaitForSeconds(0.1);
 				state = 'reload_shot';
 				anim.speed = 0.7f;
-				anim.SetInteger("action", 32);
+				anim.SetInteger("action", 42);
 			}
 		}
 }
@@ -175,13 +211,13 @@ function reloadWeapon() {
 			_stat.ammoLeft = 30;
 			audio.PlayOneShot(audioReloadAssault_rifle, 0.2);
 			yield WaitForSeconds(0.5);
-			anim.SetInteger("action", 22);
+			anim.SetInteger("action", 52);
 			anim.speed = 0.6f;
 		} else if(_GM.weapon == 'Shotgun'){
 			nextFire = Time.time + 3.6;
 			_stat.ammoLeft = 8;
 			yield WaitForSeconds(0.5);
-			anim.SetInteger("action", 32);
+			anim.SetInteger("action", 42);
 			anim.speed = 2.8f;
 			audio.PlayOneShot(audioReloadShotgun, 0.2);
 			yield WaitForSeconds(1);

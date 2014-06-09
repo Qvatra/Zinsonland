@@ -1,0 +1,1250 @@
+fileFormatVersion: 2
+guid: 217703274b0bf204ba374bdab800e444
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: assault60_180x218_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_2
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_4
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_5
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_6
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_7
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_8
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_9
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_10
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_11
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 2409
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_13
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_14
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_15
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_16
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_17
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_18
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_19
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_20
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_21
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_22
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_23
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 2191
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_25
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_26
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_27
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_28
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_29
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_30
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_31
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_32
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_33
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_34
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_35
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1973
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_37
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_38
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_39
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_40
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_41
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_42
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_43
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_44
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_45
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_46
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_47
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1755
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_49
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_50
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_51
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_52
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_53
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_54
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_55
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_56
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_57
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_58
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_59
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1537
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_61
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_62
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_63
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_64
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_65
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_66
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_67
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_68
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_69
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_70
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_71
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1319
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_73
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_74
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_75
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_76
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_77
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_78
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_79
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_80
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_81
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_82
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_83
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1101
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_85
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_86
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_87
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_88
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_89
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_90
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_91
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_92
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_93
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_94
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_95
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 883
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_97
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_98
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_99
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_100
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_101
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_102
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_103
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_104
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_105
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_106
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_107
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 665
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_109
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_110
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_111
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_112
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_113
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_114
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_115
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_116
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_117
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_118
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_119
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 447
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_121
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_122
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_123
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_124
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_125
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_126
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_127
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_128
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_129
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_130
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_131
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 229
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: assault60_180x218_132
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 11
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
