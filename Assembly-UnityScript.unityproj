@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Supply(Sniper).js" />
      <Compile Include="Assets\Scripts\Supply(Uzi).js" />
      <Compile Include="Assets\Scripts\Supply(granade).js" />
+     <Compile Include="Assets\Scripts\Tower.js" />
      <Compile Include="Assets\Scripts\_GM.js" />
      <Compile Include="Assets\Scripts\_GUI.js" />
      <Compile Include="Assets\Scripts\_MainCam.js" />
