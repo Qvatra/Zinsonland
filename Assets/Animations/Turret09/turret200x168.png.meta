@@ -1,0 +1,557 @@
+fileFormatVersion: 2
+guid: 26f365950fa4cd2428eaeaa3659f69a4
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: turret200x168_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1010
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1010
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1010
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1010
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1010
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1010
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_6
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1010
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_7
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1010
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 842
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_9
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 842
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 842
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_11
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 842
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_12
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 842
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_13
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 842
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_14
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 842
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_15
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 842
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 674
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_17
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 674
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_18
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 674
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_19
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 674
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_20
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 674
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_21
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 674
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_22
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 674
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_23
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 674
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 506
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_25
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 506
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_26
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 506
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_27
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 506
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_28
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 506
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_29
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 506
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_30
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 506
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_31
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 506
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 338
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_33
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 338
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_34
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 338
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_35
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 338
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_36
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 338
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_37
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 338
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_38
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 338
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_39
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 338
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 170
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_41
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 170
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_42
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 170
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_43
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 170
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_44
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 170
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_45
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 170
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_46
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 170
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_47
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 170
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_49
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 2
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_50
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 2
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_51
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_52
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 2
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_53
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_54
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: turret200x168_55
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2
+        width: 200
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
