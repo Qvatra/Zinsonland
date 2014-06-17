@@ -23,5 +23,6 @@ function Start () {
 }
 
 function Update () {
-	rotate(gunObj, 60f);
+	rotate(gunObj, 350.0f);
+	scan();
 }
