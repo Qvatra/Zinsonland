@@ -157,7 +157,7 @@ function createShot(weapon){
 	var shotCloneScript = shotClone.GetComponent(shot);
 	shotCloneScript.shotDirection = shootTo;
 	shotCloneScript.startPosition = transform.position;
-	shotCloneScript.weapon = weapon;
+	//shotCloneScript.weapon = weapon;
 }
 
 function firing() {

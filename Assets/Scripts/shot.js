@@ -1,9 +1,10 @@
 ﻿#pragma strict
 
+var trace: boolean = true;
+var damage : float;
 var velocity : int;
 var shotDirection: Vector2;
 var startPosition: Vector3;
-var weapon: String;
 
 private var vx : float;
 private var vy : float;
@@ -17,19 +18,17 @@ function Start () {
 	_stat.shotsFired++;
 	Physics2D.IgnoreLayerCollision(8, 9, true);
 	Physics2D.IgnoreLayerCollision(9, 9, true);
-	if (weapon == 'Shotgun') {
-		direction = Vector2(shotDirection.x + Random.Range(-0.15,0.15), shotDirection.y + Random.Range(-0.15,0.15)).normalized;
-	} else if (weapon == 'Assault_rifle') {
-		direction = Vector2(shotDirection.x + Random.Range(-0.05,0.05), shotDirection.y + Random.Range(-0.05,0.05)).normalized;
-	} else if (weapon == 'Pistol') {
-		direction = Vector2(shotDirection.x, shotDirection.y).normalized;
-	}
+
+	direction = Vector2(shotDirection.x, shotDirection.y).normalized;
+
 	rigidbody2D.velocity = direction*velocity;
 	
-	lineRenderer = GetComponent(LineRenderer);		
-	var rndDist = _GM.shotAppearDist + _GM.aimDist * Random.Range(0f,0.8f);
-	lineRenderer.SetPosition(0, startPosition + direction*rndDist);
-	lineRenderer.SetPosition(1, startPosition + direction*_GM.shotDist);
+	if(trace){
+		lineRenderer = GetComponent(LineRenderer);		
+		var rndDist = _GM.shotAppearDist + _GM.aimDist * Random.Range(0f,0.8f);
+		lineRenderer.SetPosition(0, startPosition + direction*rndDist);
+		lineRenderer.SetPosition(1, startPosition + direction*_GM.shotDist);
+	}
 	time = Time.time;
 }
 
@@ -49,13 +48,17 @@ function Update(){
 	}
 	
 	//deletes shot trace after x seconds
-	if(Time.time - time > 0.02){
+	if(Time.time - time > 0.02 && trace){
 		Destroy(lineRenderer);
 	}
 }
 
 //used in enemy to draw blood splatter
 function bulletDirection(){
-	var dir: Vector3 = Vector3(direction.x,direction.y);
-	return dir;
+	return Vector3(direction.x,direction.y);
+}
+
+function bulletDamage(){
+	if(!damage)damage = 1f;
+	return damage;
 }

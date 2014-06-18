@@ -161,7 +161,7 @@ function createShot(weapon){
 	var delta: float  = Random.Range(-0.05, 0.05);
 	shotCloneScript.shotDirection = direction;
 	shotCloneScript.startPosition = transform.position + direction * delta;
-	shotCloneScript.weapon = weapon;
+	//shotCloneScript.weapon = weapon;
 }
 
 function firing() {

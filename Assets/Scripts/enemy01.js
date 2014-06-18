@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 var anim : Animator;
-var health : int;
+var health : float;
 var speed : float;
 var coeff : float;
 var scanTimeLowBound : float;
@@ -181,7 +181,7 @@ function OnCollisionEnter2D(hitInfo : Collision2D){
 		audio.PlayOneShot(audioHit, 0.7);
 		Instantiate (blood01, transform.position, Quaternion.FromToRotation(Vector3.right,dir));
 		Destroy(hitInfo.gameObject);
-		health--;
+		health = health - script.bulletDamage();
 		if (health <= 0) {
 			death(dir);
 			alive = false;

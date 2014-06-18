@@ -1,11 +1,5 @@
 ﻿#pragma strict
 
-var gunObj: GameObject;
-var tripodObj: GameObject;
-var gunAnim : Animator;
-var tripodAnim : Animator;
-var angle: float = 45f;
-
 public class Turret extends Tower {}
 
 function Awake(){
@@ -23,6 +17,8 @@ function Start () {
 }
 
 function Update () {
-	rotate(gunObj, 350.0f);
+	followTarget();
 	scan();
+	fire();
+	if(health < 0)death();
 }
