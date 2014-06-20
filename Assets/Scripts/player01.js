@@ -2,7 +2,6 @@
 
 var anim : Animator;
 var feetAnim : Animator;
-var shotPrefab : GameObject;
 var aim01 : Transform;
 static var aimPos : Vector3;
 var health : float;
@@ -16,8 +15,7 @@ var audioReloadShotgun: AudioClip;
 var audioReloadShotgun2: AudioClip;
 var audioReloadShotgun3: AudioClip;
 var audioReloadPistol: AudioClip;
-
-private var nextFire : float = 1f; //1 to prevent shot at button
+var pistol : GameObject;
 private var localScaleX : float;
 private var direction : Vector2; //normalized vector of shoting direction
 private var alive: boolean = true;
@@ -25,10 +23,12 @@ var state: String = 'stand'; //state of animation clip
 private var moving: boolean = false;
 private var soldier01: GameObject;
 private var mouse : Vector2;
-
+var currWeapon : Weapon;
 function Start () {
 	localScaleX = transform.localScale.x;
 	soldier01 = GameObject.Find("soldier01");
+	currWeapon = Instantiate(pistol).GetComponent("Weapon");
+	currWeapon.setOwner(this.gameObject);
 }
 
 function Update () {
@@ -44,11 +44,12 @@ function Update () {
 			soldier01.SendMessage("setDestination",cam.ScreenToWorldPoint(Input.mousePosition));
 		}
 		
-		if(_stat.ammoLeft > 0){
-			if(Time.time > nextFire) firing();
-		} else if(state != 'reload' && state != 'reload_shot') {
-			reloadWeapon();
-		}
+		
+			
+			//state = 'fire';
+		
+			currWeapon.fire(direction, transform.position, anim);
+		
 		
 		aimPos = aim01.position;
 		transform.position.x += Input.GetAxis("Horizontal")* _GM.p01vel * Time.deltaTime;
@@ -68,65 +69,12 @@ function Update () {
 		
 		if(moving && state != 'walk' && state != 'reload' && state != 'reload_shot'){
 			state = 'walk';
-			if(_GM.weapon == 'Pistol'){
 				anim.speed = 1f;
-				anim.SetInteger("action", 1);
-			} else if(_GM.weapon == 'Assault_rifle'){
-				anim.speed = 1f;
-				anim.SetInteger("action", 5);
-			} else if(_GM.weapon == 'Shotgun'){
-				anim.speed = 1f;
-				anim.SetInteger("action", 4);
-			} else if(_GM.weapon == 'MachineGun'){
-				anim.speed = 1f;
-				anim.SetInteger("action", 6);
-			} else if(_GM.weapon == 'Sniper'){
-				anim.speed = 1f;
-				anim.SetInteger("action", 3);
-			} else if(_GM.weapon == 'Uzi'){
-				anim.speed = 1f;
-				anim.SetInteger("action", 2);
-			} else if(_GM.weapon == 'RPG'){
-				anim.speed = 1f;
-				anim.SetInteger("action", 7);
-			} else if(_GM.weapon == 'Granade'){
-				anim.speed = 1f;
-				anim.SetInteger("action", 8);
-			} else if(_GM.weapon == 'Mine'){
-				anim.speed = 1f;
-				anim.SetInteger("action", 9);
-			}
-
+				anim.SetInteger("action", currWeapon.walkAnim);
 		} else if (!moving && state != 'stand' && state != 'reload' && state != 'reload_shot') {
 			state = 'stand';
-			if(_GM.weapon == 'Pistol'){
 				anim.speed = 0.4f;
-				anim.SetInteger("action", 1);
-			} else if(_GM.weapon == 'Assault_rifle'){
-				anim.speed = 0.4f;
-				anim.SetInteger("action", 5);
-			} else if(_GM.weapon == 'Shotgun'){
-				anim.speed = 0.4f;
-				anim.SetInteger("action", 4);
-			} else if(_GM.weapon == 'MachineGun'){
-				anim.speed = 0.4f;
-				anim.SetInteger("action", 6);
-			} else if(_GM.weapon == 'Sniper'){
-				anim.speed = 0.4f;
-				anim.SetInteger("action", 3);
-			} else if(_GM.weapon == 'Uzi'){
-				anim.speed = 0.4f;
-				anim.SetInteger("action", 2);
-			} else if(_GM.weapon == 'RPG'){
-				anim.speed = 0.4f;
-				anim.SetInteger("action", 7);
-			} else if(_GM.weapon == 'Granade'){
-				anim.speed = 0.4f;
-				anim.SetInteger("action", 8);
-			} else if(_GM.weapon == 'Mine'){
-				anim.speed = 0.4f;
-				anim.SetInteger("action", 9);
-			}
+				anim.SetInteger("action", currWeapon.walkAnim);
 		}
 		
 	} else {
@@ -155,79 +103,7 @@ function shotDirection(){
 	return direction;
 }
 
-function createShot(weapon){
-	var shotClone: GameObject = Instantiate(shotPrefab);
-	var shotCloneScript = shotClone.GetComponent(shot);
-	var delta: float  = Random.Range(-0.05, 0.05);
-	shotCloneScript.shotDirection = direction;
-	shotCloneScript.startPosition = transform.position + direction * delta;
-	//shotCloneScript.weapon = weapon;
-}
 
-function firing() {
-		state = 'fire';
-
-		if(Input.GetButtonDown("Fire1") && _GM.weapon == 'Pistol'){
-			nextFire = Time.time + 0.7;
-			createShot(_GM.weapon);
-	    	audio.PlayOneShot(audioPistol, 0.1);
-	    	_stat.ammoLeft--;
-		} else if(Input.GetButton("Fire1") && _GM.weapon == 'Assault_rifle'){
-			nextFire = Time.time + 0.17;
-			createShot(_GM.weapon);
-			audio.PlayOneShot(audioAssault_rifle, 0.4);
-			_stat.ammoLeft--;
-		} else if(Input.GetButtonDown("Fire1") &&_GM.weapon == 'Shotgun'){
-			nextFire = Time.time + 1.5;
-			for(var i = 0; i < 8; i++){
-				createShot(_GM.weapon);
-			}
-			audio.PlayOneShot(audioShotgun, 0.4);
-			_stat.ammoLeft--;
-			
-			if(_stat.ammoLeft > 0) {
-				yield WaitForSeconds(0.2);
-				audio.PlayOneShot(audioReloadShotgun3, 0.2);
-				yield WaitForSeconds(0.1);
-				state = 'reload_shot';
-				anim.speed = 0.7f;
-				anim.SetInteger("action", 42);
-			}
-		}
-}
-
-function reloadWeapon() {
-		state = 'reload';
-		if(_GM.weapon == 'Pistol'){
-			nextFire = Time.time + 1.5;
-			_stat.ammoLeft = 5;
-			anim.SetInteger("action", 12);
-			anim.speed = 0.6f;
-			yield WaitForSeconds(0.3);
-			audio.PlayOneShot(audioReloadPistol, 0.5);
-
-		} else if(_GM.weapon == 'Assault_rifle'){
-			nextFire = Time.time + 3;
-			_stat.ammoLeft = 30;
-			audio.PlayOneShot(audioReloadAssault_rifle, 0.2);
-			yield WaitForSeconds(0.5);
-			anim.SetInteger("action", 52);
-			anim.speed = 0.6f;
-		} else if(_GM.weapon == 'Shotgun'){
-			nextFire = Time.time + 3.6;
-			_stat.ammoLeft = 8;
-			yield WaitForSeconds(0.5);
-			anim.SetInteger("action", 42);
-			anim.speed = 2.8f;
-			audio.PlayOneShot(audioReloadShotgun, 0.2);
-			yield WaitForSeconds(1);
-			audio.PlayOneShot(audioReloadShotgun, 0.1);
-			yield WaitForSeconds(1);
-			anim.speed = 0.7f;
-			yield WaitForSeconds(0.3);
-			audio.PlayOneShot(audioReloadShotgun2, 0.4);
-		}
-}
 function damage(dmg : float) {
 	health -= dmg;
 }

@@ -14,6 +14,8 @@ function OnTriggerEnter2D (hitInfo : Collider2D) {
 		toDel = true;
 		_GM.weapon = 'MachineGun';
 		_stat.ammoLeft = 300;
+		
+		
 		audio.PlayOneShot(audioPick, 0.5);
 
 		yield WaitForSeconds(0.5);

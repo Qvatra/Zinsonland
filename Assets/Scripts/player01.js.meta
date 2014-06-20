@@ -2,7 +2,22 @@ fileFormatVersion: 2
 guid: bd788d434077fbf48908c159d42b173d
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - anim: {instanceID: 0}
+  - feetAnim: {instanceID: 0}
+  - shotPrefab: {instanceID: 0}
+  - aim01: {instanceID: 0}
+  - cam: {instanceID: 0}
+  - audioPistol: {instanceID: 0}
+  - audioAssault_rifle: {instanceID: 0}
+  - audioShotgun: {instanceID: 0}
+  - audioDeath: {instanceID: 0}
+  - audioReloadAssault_rifle: {instanceID: 0}
+  - audioReloadShotgun: {instanceID: 0}
+  - audioReloadShotgun2: {instanceID: 0}
+  - audioReloadShotgun3: {instanceID: 0}
+  - audioReloadPistol: {instanceID: 0}
+  - pistol: {fileID: 100000, guid: c98ceacb7bfb0c84b98f21d7143fe26c, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
