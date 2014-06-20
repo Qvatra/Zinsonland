@@ -9,6 +9,7 @@ var shotPrefab : GameObject;
 
 var health: float = 20f;
 var trace: boolean = true;
+var installed: boolean = false;
 var range: float = 2f;
 var rate: float = 1f;
 var damage: float;
@@ -25,24 +26,9 @@ private var shotDir: Vector2;
 private var target: GameObject;
 
 public function Tower(){}
-/*    
-public function rotate(gun: GameObject, angle: float){  //rotate upto angle deg with rotationVelocity
- 	currentAng = gun.transform.eulerAngles.z % 360;		//currentAbg[0, 360)
- 	angle = angle % 360;								//angle[0, 360)
 
-	if(Mathf.Abs(angle - currentAng) > threshold){
-		if(currentAng > angle && currentAng - angle > 180 || currentAng < angle && angle - currentAng < 180) {
-			gun.transform.eulerAngles.z = currentAng + Time.deltaTime*rotationVelocity;
-		} else {
-			gun.transform.eulerAngles.z = currentAng - Time.deltaTime*rotationVelocity;
-		}
-	} else {
-		gun.transform.eulerAngles.z = angle;
-	}
-}
-*/
 public function followTarget(){              //follow target with rotationVelocity
-	if(target){
+	if(target && installed){
  		currentAng = gunObj.transform.eulerAngles.z % 360;		//currentAbg[0, 360)
 
  		var vec: Vector2 = Vector2(target.transform.position.x - gunObj.transform.position.x, target.transform.position.y - gunObj.transform.position.y).normalized;
@@ -66,7 +52,7 @@ public function followTarget(){              //follow target with rotationVeloci
 }
 
 public function scan(){ //scans the area every scanTime seconds to find a target within the range distance
-	if(Time.time > time){
+	if(Time.time > time && installed){
 		target = findClosestEnemy();
 		time = Time.time + scanTime;
 	} 
@@ -93,7 +79,7 @@ function findClosestEnemy(){ //serch for closest enemy in the Tower range
 }    
         
 public function fire() {
-	if(Time.time > nextFire && shotDir != Vector2.zero && target) {
+	if(Time.time > nextFire && shotDir != Vector2.zero && target && installed) {
 		nextFire = Time.time + rate;
 		var shotClone: GameObject = Instantiate(shotPrefab);
 		var shotCloneScript = shotClone.GetComponent(shot);
@@ -105,8 +91,12 @@ public function fire() {
 	}
 }
  
-public function death() {
-	//todo
-}               
+public function install(): IEnumerator {
+	installed = true;
+}          
+
+public function destroy(): IEnumerator {
+	installed = false;
+}           
                           
 }
