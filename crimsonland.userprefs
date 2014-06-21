@@ -1,14 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Turret.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\explosionScript.js">
     <Files>
-      <File FileName="Assets\Scripts\Turret.js" Line="18" Column="17" />
-      <File FileName="Assets\Scripts\Tower.js" Line="93" Column="2" />
-      <File FileName="Assets\Scripts\player01.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Turret.js" Line="17" Column="9" />
+      <File FileName="Assets\Scripts\Tower.js" Line="97" Column="12" />
+      <File FileName="Assets\Scripts\player01.js" Line="20" Column="63" />
       <File FileName="Assets\Scripts\soldier01script.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\shot.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\enemy01.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Pistol.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\enemy01.js" Line="55" Column="1" />
+      <File FileName="Assets\Scripts\Pistol.js" Line="44" Column="54" />
+      <File FileName="Assets\Scripts\explosionScript.js" Line="5" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

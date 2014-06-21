@@ -6,6 +6,7 @@ var tripodObj: GameObject;
 var gunAnim : Animator;
 var tripodAnim : Animator;
 var shotPrefab : GameObject;
+var explosionPrefab : GameObject;
 
 var health: float = 20f;
 var trace: boolean = true;
@@ -96,7 +97,8 @@ public function install(): IEnumerator {
 }          
 
 public function destroy(): IEnumerator {
-	installed = false;
+	var shotClone: GameObject = Instantiate(explosionPrefab, transform.position, transform.rotation);
+	Destroy(gameObject);
 }           
                           
 }

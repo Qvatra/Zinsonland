@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\boxScript.js" />
      <Compile Include="Assets\Scripts\cursor.js" />
      <Compile Include="Assets\Scripts\enemy01.js" />
+     <Compile Include="Assets\Scripts\explosionScript.js" />
      <Compile Include="Assets\Scripts\fieldScript.js" />
      <Compile Include="Assets\Scripts\player01.js" />
      <Compile Include="Assets\Scripts\shot.js" />

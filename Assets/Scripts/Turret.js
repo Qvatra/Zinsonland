@@ -7,9 +7,9 @@ function Awake(){
 }
 
 function Start () {
-	yield WaitForSeconds(5);
+	yield WaitForSeconds(3);
 	install();
-	yield WaitForSeconds(10);
+	yield WaitForSeconds(6);
 	destroy();
 }
 
@@ -28,13 +28,4 @@ function install(): IEnumerator{
 	gunAnim.SetInteger("action", 1);
 	yield WaitForSeconds(1);
 	super();
-}
-
-function destroy(): IEnumerator{
-	super();
-	gunAnim.speed = 0.8f;
-	gunAnim.SetInteger("action", 2);
-	yield WaitForSeconds(0.4);
-	tripodAnim.speed = 0.8f;
-	tripodAnim.SetInteger("action", 2);
 }
