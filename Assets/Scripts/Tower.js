@@ -10,7 +10,6 @@ var explosionPrefab : GameObject;
 
 var health: float = 20f;
 var trace: boolean = true;
-var installed: boolean = false;
 var range: float = 2f;
 var rate: float = 1f;
 var damage: float;
@@ -18,6 +17,9 @@ var accuracy: float = 0.5f;
 var shotVelocity: float;
 var rotationVelocity: int = 100; //grad per sec
 var scanTime: float = 1f;
+var audioRotate: AudioClip;
+var audioShot: AudioClip;
+var audioInstall: AudioClip;
 
 private var currentAng: float;
 private var threshold: int = 3; //threshold in grad to avoid vibration
@@ -25,11 +27,12 @@ private var time: float = 0f;
 private var nextFire: float = 0f;
 private var shotDir: Vector2;
 private var target: GameObject;
+protected var installed: boolean = false;
 
 public function Tower(){}
 
 public function followTarget(){              //follow target with rotationVelocity
-	if(target && installed){
+	if(target){
  		currentAng = gunObj.transform.eulerAngles.z % 360;		//currentAbg[0, 360)
 
  		var vec: Vector2 = Vector2(target.transform.position.x - gunObj.transform.position.x, target.transform.position.y - gunObj.transform.position.y).normalized;
@@ -53,7 +56,7 @@ public function followTarget(){              //follow target with rotationVeloci
 }
 
 public function scan(){ //scans the area every scanTime seconds to find a target within the range distance
-	if(Time.time > time && installed){
+	if(Time.time > time){
 		target = findClosestEnemy();
 		time = Time.time + scanTime;
 	} 
@@ -80,7 +83,7 @@ function findClosestEnemy(){ //serch for closest enemy in the Tower range
 }    
         
 public function fire() {
-	if(Time.time > nextFire && shotDir != Vector2.zero && target && installed) {
+	if(Time.time > nextFire && shotDir != Vector2.zero && target) {
 		nextFire = Time.time + rate;
 		var shotClone: GameObject = Instantiate(shotPrefab);
 		var shotCloneScript = shotClone.GetComponent(shot);
@@ -89,7 +92,9 @@ public function fire() {
 		shotCloneScript.velocity = shotVelocity;
 		shotCloneScript.damage = damage;
 		shotCloneScript.trace = trace;
+		return true;
 	}
+	return false;
 }
  
 public function install(): IEnumerator {
@@ -100,5 +105,5 @@ public function destroy(): IEnumerator {
 	var shotClone: GameObject = Instantiate(explosionPrefab, transform.position, transform.rotation);
 	Destroy(gameObject);
 }           
-                          
+
 }
