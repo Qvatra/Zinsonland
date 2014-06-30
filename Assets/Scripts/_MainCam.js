@@ -1,5 +1,28 @@
 ﻿#pragma strict
 
+var iconStyle : GUIStyle;
+var empty: Texture;
+
+var assault: Texture;
+var marine: Texture;
+var medic: Texture;
+var engineer: Texture;
+
+var ak47: Texture;
+var uzi: Texture;
+var svd: Texture;
+var minigun: Texture;
+
+var health10: Texture;
+
+var rate10: Texture;
+
+var range10: Texture;
+
+var speed10: Texture;
+
+var accuracy10: Texture;
+
 var ammo: Texture;
 var bulletBar: Texture;
 var heart: Texture;
@@ -15,31 +38,52 @@ private var distX: int = 300;
 private var border: int = 5;
 private var size: int = 50;
 private var playerHealth: int;
+private var iconsArray: Array = [];
 
 function Start () {
 	startRect = new Rect (Screen.width - 250, Screen.height - 75, 200, 50);
+	iconsArray = [assault, empty, marine, empty, medic, empty, engineer];
 }
 
 function OnGUI () {
 	if(_stat.gameRunning){
 		playerHealthBar(20, 15, 6, 12, 2);
 		ammoBar(19, 35, 6, 15, 1);
-		
-		GUI.DrawTexture(Rect(distX + border,border,size,size), aTexture, ScaleMode.ScaleToFit, true, 1f);
-		GUI.DrawTexture(Rect(distX + 2*border + size,border,size,size), aTexture, ScaleMode.ScaleToFit, true, 1f);
-		GUI.DrawTexture(Rect(distX + 3*border + 2*size,border,size,size), aTexture, ScaleMode.ScaleToFit, true, 1f);
-		GUI.DrawTexture(Rect(distX + 4*border + 3*size,border,size,size), aTexture, ScaleMode.ScaleToFit, true, 1f);
-		GUI.DrawTexture(Rect(distX + 5*border + 4*size,border,size,size), aTexture, ScaleMode.ScaleToFit, true, 1f);
-		GUI.DrawTexture(Rect(distX + 6*border + 5*size,border,size,size), aTexture, ScaleMode.ScaleToFit, true, 1f);
-		GUI.DrawTexture(Rect(distX + 7*border + 6*size,border,size,size), aTexture, ScaleMode.ScaleToFit, true, 1f);
-		GUI.DrawTexture(Rect(distX + 8*border + 7*size,border,size,size), aTexture, ScaleMode.ScaleToFit, true, 1f);
-		GUI.DrawTexture(Rect(distX + 9*border + 8*size,border,size,size), aTexture, ScaleMode.ScaleToFit, true, 1f);
-		GUI.DrawTexture(Rect(distX + 10*border + 9*size,border,size,size), aTexture, ScaleMode.ScaleToFit, true, 1f);		
+		drawIcons();
 	} else {
 		GUI.Box(Rect (0, Screen.height - 100, Screen.width, 100), "");
 		if (GUI.Button (startRect, "Start")) gameManager.startLevel();
 	}
 }
+
+function drawIcons() {
+	for(var i:int=0; i<iconsArray.length; i++){
+		if(iconsArray[i] != empty){
+			var rect: Rect = Rect(distX + (i+1)*border + i*size,border,size,size);
+			var texture: Texture = iconsArray[i];
+			if (GUI.Button (rect, texture, iconStyle)) clickEvent(i);
+		} else {
+			//skips some space here
+		}
+	}
+}
+
+function clickEvent(ind: int){
+	if(iconsArray[ind] == assault){
+		iconsArray.splice(ind,1,ak47,health10,rate10);
+	}
+	if(iconsArray[ind] == marine){
+		iconsArray.splice(ind,1,uzi,speed10,health10);
+	}
+	if(iconsArray[ind] == medic){
+		iconsArray.splice(ind,1,svd,accuracy10,speed10);
+	}
+	if(iconsArray[ind] == engineer){
+		iconsArray.splice(ind,1,minigun,range10,accuracy10);
+	}
+}
+	
+
 
 function playerHealthBar(x:int, y:int, w:int, h:int, dx:int){ //x,y position coords; w,h size; dx border;
 	GUI.DrawTexture(Rect(x - 3, y - h, 3*w, 3*h), heart, ScaleMode.ScaleToFit, true, 1f);
