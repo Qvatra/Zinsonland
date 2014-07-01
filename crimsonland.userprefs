@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\_MainCam.js">
     <Files>
-      <File FileName="Assets\Scripts\_MainCam.js" Line="16" Column="23" />
-      <File FileName="Assets\Scripts\Turret.js" Line="14" Column="27" />
+      <File FileName="Assets\Scripts\_MainCam.js" Line="170" Column="2" />
+      <File FileName="Assets\Scripts\_MainCam.js" Line="126" Column="39" />
+      <File FileName="Assets\Scripts\Turret.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Tower.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\player01.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\soldier01script.js" Line="1" Column="1" />

@@ -13,9 +13,28 @@ var uzi: Texture;
 var svd: Texture;
 var minigun: Texture;
 
+var turret: Texture;
+
+var stun: Texture;
+
+var damage10: Texture;
+var damage20: Texture;
+var damage30: Texture;
+var damage40: Texture;
+
+var weapon: Texture;
+
 var health10: Texture;
+var health20: Texture;
+var health30: Texture;
+var health40: Texture;
+var health50: Texture;
 
 var rate10: Texture;
+var rate20: Texture;
+var rate30: Texture;
+var rate40: Texture;
+var rate50: Texture;
 
 var range10: Texture;
 
@@ -69,17 +88,45 @@ function drawIcons() {
 }
 
 function clickEvent(ind: int){
+Debug.Log(int);
 	if(iconsArray[ind] == assault){
 		iconsArray.splice(ind,1,ak47,health10,rate10);
-	}
-	if(iconsArray[ind] == marine){
+	} else if(iconsArray[ind] == marine){
 		iconsArray.splice(ind,1,uzi,speed10,health10);
-	}
-	if(iconsArray[ind] == medic){
+	} else if(iconsArray[ind] == medic){
 		iconsArray.splice(ind,1,svd,accuracy10,speed10);
-	}
-	if(iconsArray[ind] == engineer){
+	} else if(iconsArray[ind] == engineer){
 		iconsArray.splice(ind,1,minigun,range10,accuracy10);
+	} else if(iconsArray[ind] == ak47){
+		iconsArray.splice(ind,1,damage10);
+	} else if(iconsArray[ind] == damage10){
+		iconsArray.splice(ind,1,damage20);
+	} else if(iconsArray[ind] == damage20){
+		iconsArray.splice(ind,1,damage30);
+	} else if(iconsArray[ind] == damage30){
+		iconsArray.splice(ind,1,damage40);
+	} else if(iconsArray[ind] == damage40){
+		iconsArray.splice(ind,1,weapon);
+	} else if(iconsArray[ind] == health10){
+		iconsArray.splice(ind,1,health20);
+	} else if(iconsArray[ind] == health20){
+		iconsArray.splice(ind,1,health30);
+	} else if(iconsArray[ind] == health30){
+		iconsArray.splice(ind,1,health40);
+	} else if(iconsArray[ind] == health40){
+		iconsArray.splice(ind,1,health50);
+	} else if(iconsArray[ind] == health50){
+		iconsArray.splice(ind,1,turret);
+	} else if(iconsArray[ind] == rate10){
+		iconsArray.splice(ind,1,rate20);
+	} else if(iconsArray[ind] == rate20){
+		iconsArray.splice(ind,1,rate30);
+	} else if(iconsArray[ind] == rate30){
+		iconsArray.splice(ind,1,rate40);
+	} else if(iconsArray[ind] == rate40){
+		iconsArray.splice(ind,1,rate50);
+	} else if(iconsArray[ind] == rate50){
+		iconsArray.splice(ind,1,stun);
 	}
 }
 	
