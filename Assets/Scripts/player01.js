@@ -28,7 +28,6 @@ function Start () {
 	localScaleX = transform.localScale.x;
 	soldier01 = GameObject.Find("soldier01");
 	currWeapon = Instantiate(pistol).GetComponent("Weapon");
-	currWeapon.setOwner(this.gameObject);
 }
 
 function Update () {
@@ -36,7 +35,6 @@ function Update () {
 		mouse = cam.ScreenToWorldPoint(Input.mousePosition);
 		direction.x = mouse.x - transform.position.x;
 		direction.y = mouse.y - transform.position.y;
-		direction = direction.normalized;
 		
 		transform.rotation = Quaternion.Euler(0, 0, angle());
 		
@@ -45,10 +43,17 @@ function Update () {
 		}
 		
 		
-			
-			//state = 'fire';
-		
-			currWeapon.fire(direction, transform.position, anim);
+			if((Time.time > currWeapon.nextFire) && ((currWeapon.autofire && Input.GetButton("Fire1"))||(!currWeapon.autofire && Input.GetButtonDown("Fire1")))) {
+				if (currWeapon.ammoLeft>0) {
+					state = 'fire';
+					currWeapon.nextFire = Time.time + currWeapon.fireSpeed;
+					currWeapon.fire(direction, transform.position, anim);
+				} else if(state != 'reload' && state != 'reload_shot') {
+					state = 'reload';
+					currWeapon.nextFire = Time.time + currWeapon.reloadSpeed;
+					currWeapon.reload(anim);
+				}
+			}
 		
 		
 		aimPos = aim01.position;

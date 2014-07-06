@@ -22,7 +22,7 @@ private var eating: boolean;
 private var p01 : GameObject;
 private var direct: Vector2; //direction to target
 private var normal: Vector2; //normal to target
-private var alive: boolean = true;
+var alive: boolean = true;
 private var weight: float;
 
 function Start () {
@@ -174,12 +174,13 @@ function normV(nearEnemy: GameObject) {
 }
 
 function OnCollisionEnter2D(hitInfo : Collision2D){
-	if (hitInfo.gameObject.name == "shot(Clone)" && alive){
+	if (hitInfo.gameObject.tag == "shot" && alive){
 		var obj = hitInfo.gameObject;
 		var script = obj.GetComponent(shot);
 		var dir = script.bulletDirection();
 		audio.PlayOneShot(audioHit, 0.7);
 		Instantiate (blood01, transform.position, Quaternion.FromToRotation(Vector3.right,dir));
+		script.onDestroy(transform.position);
 		Destroy(hitInfo.gameObject);
 		health = health - script.bulletDamage();
 		if (health <= 0) {

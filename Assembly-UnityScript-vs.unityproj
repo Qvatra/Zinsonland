@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{2C65568D-5CE5-743D-A313-592933FCC3F3}</ProjectGuid>
+	<ProjectGuid>{0248B2A2-4B75-482F-727C-BE23CCF7B919}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -39,19 +39,22 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BigShotScript.js" />
+     <Compile Include="Assets\Scripts\MachineGun.js" />
      <Compile Include="Assets\Scripts\NewBehaviourScript.js" />
      <Compile Include="Assets\Scripts\Pistol.js" />
+     <Compile Include="Assets\Scripts\RPG.js" />
      <Compile Include="Assets\Scripts\Rifle.js" />
      <Compile Include="Assets\Scripts\Scores.js" />
      <Compile Include="Assets\Scripts\Shotgun.js" />
+     <Compile Include="Assets\Scripts\Sniper.js" />
      <Compile Include="Assets\Scripts\Supply(MachineGun).js" />
      <Compile Include="Assets\Scripts\Supply(Mine).js" />
      <Compile Include="Assets\Scripts\Supply(RPG).js" />
@@ -63,6 +66,7 @@
      <Compile Include="Assets\Scripts\TestScript.js" />
      <Compile Include="Assets\Scripts\Tower.js" />
      <Compile Include="Assets\Scripts\Turret.js" />
+     <Compile Include="Assets\Scripts\Uzi.js" />
      <Compile Include="Assets\Scripts\Weapon.js" />
      <Compile Include="Assets\Scripts\_GM.js" />
      <Compile Include="Assets\Scripts\_GUI.js" />
@@ -76,6 +80,7 @@
      <Compile Include="Assets\Scripts\explosionScript.js" />
      <Compile Include="Assets\Scripts\fieldScript.js" />
      <Compile Include="Assets\Scripts\player01.js" />
+     <Compile Include="Assets\Scripts\projectile.js" />
      <Compile Include="Assets\Scripts\shot.js" />
      <Compile Include="Assets\Scripts\soldier01script.js" />
      <Compile Include="Assets\Scripts\tower01script.js" />

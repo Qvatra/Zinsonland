@@ -1,7 +1,6 @@
 ﻿#pragma strict
 public class Weapon extends MonoBehaviour {
 
-var owner : GameObject;
 var nextFire : float = 1f; //1 to prevent shot at button
 var shotPrefab : GameObject;
 var shotSound : AudioClip;
@@ -13,6 +12,9 @@ var ammoValue : int;
 var fireSpeed : float;
 var reloadSpeed : float;
 var ammoLeft : int;
+var accuracy : float;
+var damage : float;
+var autofire : boolean;
 
 function Start () {
 
@@ -32,10 +34,6 @@ function reload (anim : Animator) : IEnumerator {
 
 function fire (direction : Vector2, position : Vector3, anim : Animator) : IEnumerator {
 
-}
-
-function setOwner(Owner : GameObject) {
-	owner = Owner;
 }
 
 }

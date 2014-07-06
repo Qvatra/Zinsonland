@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 69af97b5c3f278b41b5a501d009562b8
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - shotPrefab: {instanceID: 0}
+  - shotSound: {instanceID: 0}
+  - reloadSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

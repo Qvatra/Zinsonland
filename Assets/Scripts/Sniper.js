@@ -14,7 +14,6 @@ function reload(anim : Animator) : IEnumerator {
 			Debug.Log("reload begins");
 			ammoLeft = ammoValue;
 			_stat.ammoLeft = ammoLeft;
-			nextFire = Time.time + reloadSpeed;
 			anim.SetInteger("action", reloadAnim);
 			anim.speed = 0.6f;
 			yield WaitForSeconds(0.3);
@@ -24,17 +23,12 @@ function reload(anim : Animator) : IEnumerator {
 function fire(direction : Vector2, position : Vector3, anim : Animator) : IEnumerator {
 			
 			
-			if((Time.time > nextFire) && Input.GetButtonDown("Fire1")) {
 				Debug.Log("fire!!!!!!!!!!!!!!!!!!!!!!!!!");
-				nextFire = Time.time + fireSpeed;
 				createShot(direction, position);
 	    		audio.PlayOneShot(shotSound, 0.1);
 	    		ammoLeft--;
 	    		_stat.ammoLeft = ammoLeft;
-	    	}
-	    	if (ammoLeft<1) {
-	    		reload(anim);
-	    	}
+	    		
 }
 
 function createShot(direction : Vector2, position : Vector3){

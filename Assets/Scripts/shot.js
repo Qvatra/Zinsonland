@@ -35,7 +35,7 @@ function Start () {
 function Update(){
 	if(toDelTime!=0f && Time.time - toDelTime > 0.05){
 		//Debug.Log('destroyed');
-		Destroy(gameObject);
+		onDestroy(transform.position);
 	}
 
 	if(toDelTime==0f && rigidbody2D.velocity.normalized != direction) {
@@ -44,7 +44,7 @@ function Update(){
 	}
 	
 	if(Mathf.Abs(transform.position.x)>5 || Mathf.Abs(transform.position.y)>5){
-		Destroy(gameObject);
+		onDestroy(transform.position);
 	}
 	
 	//deletes shot trace after x seconds
@@ -61,4 +61,8 @@ function bulletDirection(){
 function bulletDamage(){
 	if(!damage)damage = 1f;
 	return damage;
+}
+
+function onDestroy(posit) {
+	Destroy(gameObject);
 }

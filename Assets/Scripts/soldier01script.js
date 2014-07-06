@@ -2,7 +2,6 @@
 
 	var anim : Animator;
 	var feetAnim : Animator;
-	var shotPrefab : GameObject;
 	var health : float;
 	var livesLeft : float;
 	var moveTo : Vector2;
@@ -20,10 +19,13 @@
 	var defendRadius : float = 0.3f; 
     var dangerRadius : float = 1.0f; 
     private var alive: boolean = true;
+    var currWeapon : Weapon;
+    var pistol : GameObject;
 function Start () {
 	livesLeft = health;
 	destinationX = -2;
 	destinationY = 0.3;
+	currWeapon = Instantiate(pistol).GetComponent("Weapon");
 }
 
 function Update () {
@@ -40,7 +42,18 @@ if (health > 0){
 	
 
 		moving();
-		firing();
+		
+		if(Time.time > currWeapon.nextFire) {
+				if (currWeapon.ammoLeft>0) {
+					currWeapon.nextFire = Time.time + currWeapon.fireSpeed;
+					currWeapon.fire(shootTo, transform.position, anim);
+				} else {
+					currWeapon.nextFire = Time.time + currWeapon.reloadSpeed;
+					currWeapon.reload(anim);
+				}
+			}
+		
+		
 } else {
 		if(alive)soldDeath();
 	}
@@ -152,20 +165,8 @@ function findClosestEnemy(){
      return closestEnemy;
 }
 
-function createShot(weapon){
-	var shotClone: GameObject = Instantiate(shotPrefab);
-	var shotCloneScript = shotClone.GetComponent(shot);
-	shotCloneScript.shotDirection = shootTo;
-	shotCloneScript.startPosition = transform.position;
-	//shotCloneScript.weapon = weapon;
-}
 
-function firing() {
-	if(Time.time > nextFire && shootTo != Vector2.zero) {
-			nextFire = Time.time + 0.7;
-			createShot('Pistol');
-	}
-}
+
 function scanTerritory() {
            currentEnemy = findClosestEnemy();
 }
