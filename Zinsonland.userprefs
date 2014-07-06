@@ -1,22 +1,23 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\projectile.js">
     <Files>
+      <File FileName="Assets\Scripts\Supply(RPG).js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\projectile.js" Line="14" Column="48" />
-      <File FileName="Assets\Scripts\RPG.js" Line="25" Column="57" />
+      <File FileName="Assets\Scripts\RPG.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\player01.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Shotgun.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Pistol.js" Line="42" Column="66" />
+      <File FileName="Assets\Scripts\Pistol.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapon.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Uzi.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Rifle.js" Line="2" Column="1" />
-      <File FileName="Assets\Scripts\shot.js" Line="52" Column="23" />
+      <File FileName="Assets\Scripts\Rifle.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\shot.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Sniper.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MachineGun.js" Line="20" Column="2" />
+      <File FileName="Assets\Scripts\MachineGun.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\soldier01script.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\enemy01.js" Line="25" Column="1" />
-      <File FileName="Assets\Scripts\Supply(Sniper).js" Line="20" Column="37" />
-      <File FileName="Assets\Scripts\Tower.js" Line="80" Column="9" />
+      <File FileName="Assets\Scripts\enemy01.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Supply(Sniper).js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Tower.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Turret.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
